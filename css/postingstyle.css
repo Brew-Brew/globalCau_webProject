@@ -1,0 +1,158 @@
+#posting_title{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#header_title{
+  margin-top:7%;
+}
+
+#header_titleName{
+  color: #5882FA;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+#header_content{
+  text-align: center;
+  width:1200px;
+}
+
+#page_titleName{
+  color:#819FF7;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+#contentNav{
+  width:50%;
+  margin:auto;
+  text-align: center;
+}
+
+#contentNav_table{
+  width:90%;
+  margin:auto;
+  text-align: center;
+}
+
+.contentNav_details{
+  color: #5882FA;
+  font-weight: 300;
+  font-size:1em;
+}
+
+#button_frame{
+  margin:auto;
+  width:40%;
+  height:150px;
+}
+
+#topbutton_frame{
+  margin:auto;
+  width:80%;
+}
+#topbutton_table{
+  width:100%;
+  text-align: center;
+}
+#notice{
+  width:100%;
+  height:70px;
+}
+#free{
+  width:100%;
+  height:70px;
+}
+#recruting_study{
+  width:100%;
+  height:70px;
+}
+
+#bottombutton_frame{
+  margin:auto;
+  width:70%;
+}
+#bottombutton_table{
+  width:100%;
+  text-align: center;
+}
+#meet{
+  width:100%;
+  height:70px;
+}
+#photo{
+  width:100%;
+  height:70px;
+}
+#QnA{
+  width:100%;
+  height:70px;
+}
+
+.posting_nav{
+  border:none;
+  border-radius: .4em;
+  font-size: 1.2em;
+}
+#notice_button{
+  width:6em;
+  height:2em;
+  background-color: rgba(240, 128, 128, 0.6);
+}
+#free_button{
+  width:8em;
+  height:2em;
+  background-color: rgba(245, 196, 196, 0.6);
+}
+#recruting_button{
+  width:10em;
+  height:2em;
+  background-color: rgba(235, 247, 160, 0.6);
+}
+#meet_button{
+  width:7em;
+  height:2em;
+  background-color: rgba(119, 159, 247, 0.6);
+}
+#photo_button{
+  width:5em;
+  height:2em;
+  background-color: rgba(177, 219, 254, 0.6);
+}
+#QnA_button{
+  width:4.5em;
+  height:2em;
+  background-color: rgba(177, 233, 242, 0.6);
+}
+
+
+#sub_title{
+  margin:auto;
+  width:50%;
+  height:50px;
+}
+#sub_titleName{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 1.5%;
+}
+
+.boundary{
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+
+.semi_boundary{
+  border-bottom: .3px solid gray;
+}
+
+#posting_frame{
+  margin:auto;
+  text-align: center;
+  width:50%;
+}
+
+#posting_table{
+  width:100%;
+}

@@ -1,0 +1,93 @@
+#header_content{
+  text-align: center;
+  width:1200px;
+}
+
+#page-title{
+  font-weight:600;
+  font-size: 2em;
+  font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif
+}
+#sub-title{
+  font-weight: 500;
+  font-size:1.3em;
+  font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+#contentNav{
+  width:50%;
+  margin:auto;
+  text-align: center;
+}
+
+#contentNav_table{
+  width:90%;
+  margin:auto;
+  text-align: center;
+}
+
+.contentNav_details{
+  color: #5882FA;
+  font-weight: 300;
+  font-size:1em;
+}
+
+#introduceWeb{
+  text-align: center;
+  width:100%;
+}
+
+#introContainer{
+  margin:auto;
+  width:75%;
+}
+
+#intro_table{
+  width:100%;
+}
+
+#top{
+  border-top:1px solid black;
+}
+
+#bottom{
+  border-bottom:1px solid black;
+}
+
+#who{
+  font-weight: bold;
+  font-size:30px;
+  color:black;
+}
+
+#fixed_left{
+  text-align: left;
+}
+
+#fixed_right{
+  text-align: right;
+}
+
+.sign_button{
+  border-radius: .5em;
+  background-color: skyblue;
+  color: white;
+}
+
+#photo_1{
+  width:100%;
+  height:400px;
+  padding:.8em;
+}
+
+#photo_2{
+  width:100%;
+  height:400px;
+  padding:.8em;
+}
+
+#photo_3{
+  width:100%;
+  height:400px;
+  padding:.8em;
+}

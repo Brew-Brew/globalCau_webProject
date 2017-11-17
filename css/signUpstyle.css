@@ -1,0 +1,89 @@
+#header_title{
+  margin-top:7%;
+}
+
+#header_titleName{
+  color: #5882FA;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+#header_content{
+  text-align: center;
+  width:1200px;
+}
+
+#frame{
+  margin:auto;
+  width:500px;
+  background-color: #D8D8D8;
+}
+#table{
+  width:100%;
+}
+#label{
+  text-align: left;
+  font-size:.9em;
+}
+#mark{
+  background-color: #5882FA;
+}
+
+#subtitle{
+  text-align: center;
+}
+
+#contentNav{
+  width:50%;
+  margin:auto;
+  text-align: center;
+}
+
+#contentNav_table{
+  width:90%;
+  margin:auto;
+  text-align: center;
+}
+
+.contentNav_details{
+  color: #5882FA;
+  font-weight: 300;
+  font-size:1em;
+}
+
+#name_frame{
+  width:80%;
+  margin-left: 10%;
+}
+
+#email_frame{
+  width:80%;
+  margin-left: 10%;
+}
+
+#password_frame{
+  width:80%;
+  margin-left: 10%;
+}
+
+#photo_name{
+  width:90%;
+}
+
+#photo_email{
+  width:100%;
+}
+
+#photo_password{
+  width:80%;
+}
+
+#submit_button{
+  color:white;
+  width:80%;
+  height:50px;
+  margin-left: 10%;
+  padding:0;
+  border: none;
+  background-color: #819FF7;
+}

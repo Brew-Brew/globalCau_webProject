@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include ../partials/stylesheet %>
+</head>
+
+<body>
+  <% include ../partials/header %>
+  <!-- Page Header -->
+    <div id="header_title">
+      <h1 id="header_titleName">C A 유</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="page-heading" id="header_content">
+          <div id="contentNav">
+            <table id="contentNav_table">
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:10%;">
+                <col style="width:25%;">
+                <col style="width:10%;">
+                <col style="width:35%;">
+              </colgroup>
+              <tr>
+                <td><a href="/intro" class="contentNav_details">Intro</a></td>
+                <td><p class="contentNav_details">|</p></td>
+                <td><a href="/posting" class="contentNav_details">Posting</a></td>
+                <td><p class="contentNav_details">|</p></td>
+                <td><a href="/information" class="contentNav_details">Information</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form name="form" id="form" action="/signup" method="post" novalidate>
+      <div id="frame">
+        <div id="mark">
+          <br>
+          <h1>Sign Up</h1>
+          <br>
+        </div>
+        <div id="subtitle">
+          <p>Do you want to be with us?<br>
+            If so, join us now.</p>
+        </div>
+
+        <table id="table">
+          <tr>
+            <td>
+              <div id="name_frame">
+                <label id="name_label">Name</label>
+                <table>
+                  <colgroup>
+                    <col style="width:10%;">
+                    <col style="width:90%;">
+                  </colgroup>
+                  <tr>
+                    <td><image src="/images/name.png" id="photo_name"></td>
+                    <td><input type="text" class="form-control" placeholder="Input your Name." id="name" name="name" required data-validation-required-message="Please enter your name."></td>
+                  </tr>
+                </table>
+                <p class="help-block text-danger"></p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div id="email_frame">
+                <label id="label">Email Address (For ID)</label>
+                <table>
+                  <colgroup>
+                    <col style="width:10%;">
+                    <col style="width:90%;">
+                  </colgroup>
+                  <tr>
+                    <td><image src="/images/email.png" id="photo_email"></td>
+                    <td><input type="email" class="form-control" placeholder="Input your E-mail." id="email" name="email" required data-validation-required-message="Please enter your email address."></td>
+                  </tr>
+                </table>
+                <p class="help-block text-danger"></p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div id="password_frame">
+                <label id="label">Password</label>
+                <table>
+                  <colgroup>
+                    <col style="width:10%;">
+                    <col style="width:90%;">
+                  </colgroup>
+                  <tr>
+                    <td><image src="/images/password.png" id="photo_password"></td>
+                    <td><input type="password" class="form-control" placeholder="Input your Password." id="password" name="password" required data-validation-required-message="Please enter your password."></td>
+                  </tr>
+                </table>
+                <p class="help-block text-danger"></p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div id="password_frame">
+                <label id="label">Password Again</label>
+                <table>
+                  <colgroup>
+                    <col style="width:10%;">
+                    <col style="width:90%;">
+                  </colgroup>
+                  <tr>
+                    <td><image src="/images/password.png" id="photo_password"></td>
+                    <td><input type="password" class="form-control" placeholder="Input your Password Again." id="password" required data-validation-required-message="Please enter your password."></td>
+                  </tr>
+                </table>
+                <p class="help-block text-danger"></p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="form-group">
+          <button type="submit" id="submit_button" name="submit" value="submit">Sign Up</button>
+        </div>
+        <br>
+      </div>
+    </form>
+
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <% include ../partials/footer %>
+    <% include ../partials/javascript %>
+</body>
+
+</html>
