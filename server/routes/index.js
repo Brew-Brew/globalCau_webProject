@@ -7,43 +7,43 @@ var nodemailer = require('nodemailer');
 
 /* GET intro page. */
 router.get('/', function(req, res, next) {
-  res.render('start', { title: 'global CAU' });
+  res.render('start', { title: 'global CAU', user : req.user});
 });
 
 
 router.get('/intro', function(req, res) {
         // Render result
-        res.render('intro',{ title: 'INTRO' });
+        res.render('intro',{ title: 'INTRO',user : req.user });
 });
 
 router.get('/posting', function(req, res) {
         // Render result
-        res.render('posting',{ title: 'INTRO' });
+        res.render('posting',{ title: 'INTRO',user : req.user });
 });
 
 router.get('/information', function(req, res) {
         // Render result
-        res.render('information',{ title: 'INFORMATION' });
+        res.render('information',{ title: 'INFORMATION',user : req.user });
 });
 router.get('/free', function(req, res) {
         // Render result
-        res.render('free',{ title: 'free' });
+        res.render('free',{ title: 'free',user : req.user });
 });
 router.get('/recruit', function(req, res) {
         // Render result
-        res.render('recruit',{ title: 'recruit' });
+        res.render('recruit',{ title: 'recruit',user : req.user });
 });
 router.get('/meet', function(req, res) {
         // Render result
-        res.render('meet',{ title: 'meet' });
+        res.render('meet',{ title: 'meet',user : req.user });
 });
 router.get('/photo', function(req, res) {
         // Render result
-        res.render('photo',{ title: 'photo' });
+        res.render('photo',{ title: 'photo',user : req.user });
 });
 router.get('/qna', function(req, res) {
         // Render result
-        res.render('photo',{ title: 'qna' });
+        res.render('photo',{ title: 'qna',user : req.user });
 });
 /* Create connects */
 router.post('/intro', function(req, res) {
@@ -62,13 +62,8 @@ function hasAuthorization(req, res, next) {
     res.redirect('/login');
 };
 
-
-
-
-
-
 router.get('/login',function(req,res,next){
-  res.render('login', { title: 'Login', message: req.flash('loginMessage')});
+  res.render('login', { title: 'Login', user : req.user, message: req.flash('loginMessage')});
 });
 
 router.post('/login', passport.authenticate('local-login', {
@@ -79,7 +74,7 @@ router.post('/login', passport.authenticate('local-login', {
 }));
 
 router.get('/signup',function(req,res,next){
-  res.render('signup', { title: 'Sign Up', message: req.flash('signupMessage')});
+  res.render('signup', { title: 'Sign Up', user : req.user, message: req.flash('signupMessage')});
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
@@ -102,7 +97,7 @@ function isLoggedIn(req, res, next) {
 /* GET Logout Page */
 router.get('/logout', function(req, res) {
     req.logout();
-    res.redirect('/intro');
+    res.redirect('/');
 });
 
 
