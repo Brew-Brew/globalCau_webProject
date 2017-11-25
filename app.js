@@ -66,6 +66,10 @@ app.get('/css/signUpstyle.css', function (req, res) {
 app.get('/css/startstyle.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'css', 'startstyle.css'));
 });
+app.get('/css/informationstyle.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'css', 'informationstyle.css'));
+});
+
 
 
 app.use("/images", express.static(__dirname + '/images'));

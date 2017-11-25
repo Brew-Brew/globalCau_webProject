@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var gravatar = require('gravatar');
 var Users = require('../models/users');
+var Posting = require('../models/posting');
 var nodemailer = require('nodemailer');
 
 /* GET intro page. */
@@ -43,11 +44,59 @@ router.get('/photo', function(req, res) {
 });
 router.get('/qna', function(req, res) {
         // Render result
-        res.render('photo',{ title: 'qna',user : req.user });
+        res.render('qna',{ title: 'qna',user : req.user });
+});
+router.get('/i_advertise', function(req, res) {
+        // Render result
+        res.render('i_advertise',{ title: 'advertise',user : req.user });
+});
+router.get('/i_housing', function(req, res) {
+        // Render result
+        res.render('i_housing',{ title: 'housing',user : req.user });
+})
+router.get('/i_lecture', function(req, res) {
+        // Render result
+        res.render('i_lecture',{ title: 'lecture',user : req.user });
+});
+router.get('/i_lf', function(req, res) {
+        // Render result
+        res.render('i_lf',{ title: 'lf',user : req.user });
+});
+router.get('/i_others', function(req, res) {
+        // Render result
+        res.render('i_others',{ title: 'others',user : req.user });
+});
+router.get('/i_post', function(req, res) {
+        // Render result
+        res.render('i_post',{ title: 'post',user : req.user });
+});
+router.get('/i_ptj', function(req, res) {
+        // Render result
+        res.render('i_ptj',{ title: 'ptj',user : req.user });
+});
+router.get('/i_restaurant', function(req, res) {
+        // Render result
+        res.render('i_restaurant',{ title: 'restaurant',user : req.user });
+});
+router.get('/i_write', function(req, res) {
+        // Render result
+        res.render('i_write',{ title: 'write',user : req.user });
 });
 /* Create connects */
-router.post('/intro', function(req, res) {
-
+router.post('/i_write', function (req, res) {
+  console.log(req.body);
+  var posting = new Posting();
+  posting.title = req.body.title;
+  posting.name = req.body.name;
+  posting.content = req.body.content;
+  posting.category = req.body.category;
+  posting.save(function (err) {
+    if(err){
+      console.log(err);
+      res.redirect('/home');
+    }
+    res.redirect('/i_advertise');
+  });
 });
 
 /* Get comment by */

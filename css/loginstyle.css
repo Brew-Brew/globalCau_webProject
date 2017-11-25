@@ -1,3 +1,7 @@
+body{
+  font-family: 'Bree Serif', serif;
+}
+
 #header_title{
   margin-top:7%;
 }
@@ -59,7 +63,7 @@
 }
 
 #signUp_table{
-  margin-left: 10%;
+  margin:0 15% 0 15%;
 }
 
 #signUp_ment{

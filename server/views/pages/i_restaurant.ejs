@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include ../partials/stylesheet %>
+</head>
+
+<body>
+  <% include ../partials/header %>
+  <!-- Page Header -->
+    <div id="header_title">
+      <h1 id="header_titleName">C A 유</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="page-heading" id="header_content">
+          <div id="contentNav">
+            <table id="contentNav_table">
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:10%;">
+                <col style="width:25%;">
+                <col style="width:10%;">
+                <col style="width:35%;">
+              </colgroup>
+              <tr>
+                <td><a href="/intro" class="contentNav_details">Intro</a></td>
+                <td><p class="contentNav_details">|</p></td>
+                <td><a href="/posting" class="contentNav_details">Posting</a></td>
+                <td><p class="contentNav_details">|</p></td>
+                <td><a href="/i_lecture" class="contentNav_details" id="information_title">Information</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="button_frame">
+      <div id="topbutton_frame">
+        <table id="topbutton_table">
+          <colgroup>
+            <col style="width:20%;">
+            <col style="width:30%;">
+            <col style="width:20%;">
+            <col style="width:30%;">
+          </colgroup>
+          <tr>
+            <td>
+              <div id="lecture">
+                <a href="/i_lecture"><button type="button" class="information_nav" id="lecture_button">#Lecture</button></a>
+              </div>
+            </td>
+            <td>
+              <div id="restaurant">
+                <a href="/i_restaurant"><button type="button" class="information_nav" id="restaurant_button">#Restaurant</button></a>
+              </div>
+            </td>
+            <td>
+              <div id="housing">
+                <a href="/i_housing"><button type="button" class="information_nav" id="housing_button">#Housing</button></a>
+              </div>
+            </td>
+            <td>
+              <div id="advertise">
+                <a href="/i_advertise"><button type="button" class="information_nav" id="advertise_button">#Advertise</button></a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="bottombutton_frame">
+        <table id="bottombutton_table">
+          <colgroup>
+            <col style="width:40%;">
+            <col style="width:40%;">
+            <col style="width:20%;">
+          </colgroup>
+          <tr>
+            <td>
+              <div id="ptj">
+                <a href="/i_ptj"><button type="button" class="information_nav" id="ptj_button">#Part_Time_Job</button></a>
+              </div>
+            </td>
+            <td>
+              <div id="lf">
+                <a href="/i_lf"><button type="button" class="information_nav" id="lf_button">#Lost_Found</button></a>
+              </div>
+            </td>
+            <td>
+              <div id="others">
+                <a href="/i_others"><button type="button" class="information_nav" id="others_button">#Others</button></a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+        </div>
+
+        <div id="total_frame">
+          <div id="sub_title">
+            <p id="sub_titleName">#Restaurant</p>
+          </div>
+          <div id="information_frame">
+            <table class="boundary" id="information_table">
+              <colgroup>
+                <col style="width:7%;">
+                <col style="width:44%;">
+                <col style="width:20%;">
+                <col style="width:7%;">
+                <col style="width:7%;">
+                <col style="width:15%;">
+              </colgroup>
+              <tr class="boundary">
+                <th>NO</th>
+                <th>Title</th>
+                <th>Writer</th>
+                <th>Views</th>
+                <th>Votes</th>
+                <th>Date</th>
+              </tr>
+              <tr class="semi_boundary">
+                <td>2</td>
+                <td>내찜닭!!</td>
+                <td>HS LEE</td>
+                <td>150</td>
+                <td>10</td>
+                <td>2017.11.15</td>
+              </tr>
+              <tr class="semi_boundary">
+                <td>1</td>
+                <td>엉터리 생고기</td>
+                <td>HS LEE</td>
+                <td>210</td>
+                <td>53</td>
+                <td>2017.11.14</td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="pageNav">
+            <table id="bottom_box">
+              <tr>
+                <td id="pageNav_frame">
+                  <table id="pageNav_table">
+                    <tr>
+                      <td><a href="pre_end.html" class="pageNav_details"><<</a></td>
+                      <td><a href="pre.html" class="pageNav_details"><</a></td>
+                      <td><a href="posting_notice.html" class="pageNav_details" id="1">1</a></td>
+                      <td><a href="next.html" class="pageNav_details">></a></td>
+                      <td><a href="next_end.html" class="pageNav_details">>></a></td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="postButton_frame">
+                  <a href="/i_write">
+                  <button class="button" id="post">
+                    <img id="photo_post" src="/images/post.png">
+                    Post
+                  </button>
+                  </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <ul class="list-inline text-center">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <% include ../partials/footer %>
+    <% include ../partials/javascript %>
+</body>
+
+</html>
