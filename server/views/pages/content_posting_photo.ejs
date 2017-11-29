@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include ../partials/stylesheet %>
+</head>
+
+<body>
+  <% include ../partials/header %>
+
+
+    <% include ../partials/content_header %>
+
+
+      <div class="container">
+        <div class="nav_bt_hashtag">
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/notice"><button type="button" class="hash_button" id="hash_button1">#Notice</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/free_posting"><button type="button" class="hash_button" id="hash_button2">#Free_Posting</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/recruiting_study"><button type="button" class="hash_button" id="hash_button3">#Recruting_Study</button></a>
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/meet"><button type="button" class="hash_button" id="hash_button4">#Let's_meet</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/photo"><button type="button" class="hash_button" id="hash_button5">#Photo</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/qna"><button type="button" class="hash_button" id="hash_button6">#QnA</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <p id="subtitle">
+          #
+          <%= mode %>
+        </p>
+
+        <ul class="photo-list">
+
+          <li id="photo0" class="photo">
+            <img src="/images/fox.jpg" alt="">
+          </li>
+          <li id="photo1" class="photo">
+            <img src="/images/dog.jpg" alt="">
+          </li>
+          <li id="photo2" class="photo">
+            <img src="/images/cat.jpg" alt="">
+          </li>
+          <li id="photo3" class="photo">
+            <img src="/images/cat.jpg" alt="">
+          </li>
+          <li id="photo4" class="photo">
+            <img src="/images/fox.jpg" alt="">
+          </li>
+          <li id="photo5" class="photo">
+            <img src="/images/cat.jpg" alt="">
+          </li>
+          <li id="photo6" class="photo">
+            <img src="/images/dog.jpg" alt="">
+          </li>
+          <li id="photo7" class="photo">
+            <img src="/images/cat.jpg" alt="">
+          </li>
+
+        </ul>
+
+
+      </div>
+
+
+
+
+
+      <nav aria-label="Page navigation example" id="table-pagination">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item"><a class="page-link" href="#">6</a></li>
+          <li class="page-item"><a class="page-link" href="#">7</a></li>
+          <li class="page-item"><a class="page-link" href="#">8</a></li>
+          <li class="page-item"><a class="page-link" href="#">9</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <% include ../partials/footer %>
+        <% include ../partials/javascript %>
+</body>
+
+</html>

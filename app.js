@@ -18,6 +18,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var net = require('net');
 var app = express();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'server/views/pages'));
 app.set('view engine', 'ejs');
@@ -45,45 +46,13 @@ var options = {
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.get('/css/clean-blog.min.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'css', 'clean-blog.min.css'));
-});
-app.get('/vendor/font-awesome/css/font-awesome.min.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'vendor/font-awesome/css', 'font-awesome.min.css'));
-});
-app.get('/vendor/bootstrap/css/bootstrap.min.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'vendor/bootstrap/css', 'bootstrap.min.css'));
-});
-app.get('/css/startstyle.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'css', 'startstyle.css'));
-});
-app.get('/css/postingstyle.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'css', 'postingstyle.css'));
-});
-app.get('/css/signUpstyle.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'css', 'signUpstyle.css'));
-});
-app.get('/css/startstyle.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'css', 'startstyle.css'));
-});
-app.get('/css/informationstyle.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'css', 'informationstyle.css'));
-});
 
-
-
-app.use("/images", express.static(__dirname + '/images'));
 app.use(bodyParser.raw(options));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('node-sass-middleware')({
-    src: path.join(__dirname, 'public'),
-    dest: path.join(__dirname, 'public'),
-    indentedSyntax: true,
-    sourceMap: true
-}));
+
 // Setup public directory
 app.use(express.static(path.join(__dirname, 'public')));
 

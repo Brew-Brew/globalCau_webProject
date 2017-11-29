@@ -11,35 +11,7 @@
 <body>
   <% include ../partials/header %>
   <!-- Page Header -->
-    <div id="header_title">
-      <h1 id="header_titleName">C A 유</h1>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-      <div class="row">
-        <div class="page-heading" id="header_content">
-          <div id="contentNav">
-            <table id="contentNav_table">
-              <colgroup>
-                <col style="width:20%;">
-                <col style="width:10%;">
-                <col style="width:25%;">
-                <col style="width:10%;">
-                <col style="width:35%;">
-              </colgroup>
-              <tr>
-                <td><a href="/intro" class="contentNav_details">Intro</a></td>
-                <td><p class="contentNav_details">|</p></td>
-                <td><a href="/posting" class="contentNav_details">Posting</a></td>
-                <td><p class="contentNav_details">|</p></td>
-                <td><a href="/i_lecture" class="contentNav_details">Information</a></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+    <% include ../partials/content_header %>
 
     <form name="form" id="form" action="/signup" method="post" novalidate>
       <div id="frame">
@@ -134,44 +106,11 @@
       </div>
     </form>
 
-
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <ul class="list-inline text-center">
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
     <% include ../partials/footer %>

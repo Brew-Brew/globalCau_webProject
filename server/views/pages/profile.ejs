@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title><%= title %></title>
-    <% include ../partials/stylesheet %>
+  <title>
+    <%= title %>
+  </title>
+  <% include ../partials/stylesheet %>
 </head>
+
 <body>
-    <% include ../partials/header %>
+  <% include ../partials/header %>
 
     <div class="container">
-        <h1><%= title %></h1>
-        <div class="datails">
+      <h1><%= title %></h1>
+      <div class="datails">
 
-            <div class="card text-xs-center">
-                <br>
-                <div class="card-block">
-                    <p class="card-text">
-                        <strong>이름</strong>: <%= user.local.name %><br>
-                        <strong>Email</strong>: <%= user.local.email %>
-                    </p>
-                    <a href="/home" class="btn btn-primary">시작하기</a>
-                    <br>
-                    <a href="/logout" class="btn btn-default">로그아웃</a>
-                </div>
-            </div>
+        <div class="card text-xs-center">
+          <br>
+          <div class="card-block">
+            <p class="card-text">
+              <strong>이름</strong>:
+              <%= user.local.name %><br>
+                <strong>Email</strong>:
+                <%= user.local.email %>
+            </p>
+            <a href="/home" class="btn btn-primary">시작하기</a>
+            <br>
+            <a href="/logout" class="btn btn-default">로그아웃</a>
+          </div>
         </div>
+      </div>
     </div>
-        <% include ../partials/footer %>
-        <% include ../partials/javascript %>
-    </body>
-    </html>
+    <% include ../partials/footer %>
+      <% include ../partials/javascript %>
+</body>
+
+</html>

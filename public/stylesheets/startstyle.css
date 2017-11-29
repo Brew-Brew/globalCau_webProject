@@ -1,0 +1,257 @@
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+
+header.masthead {
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #777;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url('/images/start-bg60.png');
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+
+h1 hr {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: #0954A0;
+}
+
+
+header.masthead hr{
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+.text-faded {
+    color: rgba(255,255,255,.7);
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #0954A0;
+    border-color: #0954A0;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 300px;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+
+
+header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
+  padding: 200px 0 150px 0;
+  color: rgba(255, 255, 255, 1.0);
+}
+
+@media only screen and (min-width:768px) {
+  header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
+    padding: 200px 0;
+  }
+}
+
+header.masthead .page-heading, header.masthead .site-heading {
+  text-align: center;
+}
+
+header.masthead .page-heading h1, header.masthead .site-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header.masthead .page-heading .subheading, header.masthead .site-heading .subheading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (min-width:768px) {
+  header.masthead .page-heading h1, header.masthead .site-heading h1 {
+    font-size: 80px
+  }
+}
+
+header.masthead .post-heading h1 {
+  font-size: 35px
+}
+
+header.masthead .post-heading .meta, header.masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: block
+}
+
+header.masthead .post-heading .subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0 30px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+header.masthead .post-heading .meta {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  font-family: Lora, 'Times New Roman', serif
+}
+
+header.masthead .post-heading .meta a {
+  color: #fff
+}
+
+@media only screen and (min-width:768px) {
+  header.masthead .post-heading h1 {
+    font-size: 55px
+  }
+  header.masthead .post-heading .subheading {
+    font-size: 30px
+  }
+}
+
+@media (min-width: 768px) {
+  header.masthead p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header.masthead h1 {
+    font-size: 4rem;
+  }
+}
+
+body {
+  font-family: 'Bree Serif', serif;
+}
+
+#start_header {
+  height: 375pt;
+}
+
+#page_title {
+  font-weight: 600;
+  font-size: 3em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+#sub-title {
+  font-weight: 500;
+  font-size: 1.3em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+#contentNav {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+#contentNav_table {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.contentNav_details {
+  color: #5882FA;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+#introduceWeb1 {
+  text-align: left;
+  width: 100%;
+}
+
+#introduceWeb2 {
+  text-align: right;
+  width: 100%;
+}
+
+#introContainer {
+  margin: auto;
+  width: 75%;
+}
+
+#bottom {
+  border-bottom: 1px solid black;
+}
+
+#who {
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
+
+.fixed_left {
+  text-align: left;
+  padding-left: 10pt;
+}
+
+#fixed_right {
+  text-align: right;
+}
+
+.sign_button {
+  border-radius: .5em;
+  background-color: #0954A0;
+  color: white;
+}
+
+#photo_1 {
+  width: 100%;
+  height: 400px;
+  padding: .8em;
+}
+
+#photo_2 {
+  width: 100%;
+  height: 400px;
+  padding: .8em;
+}
+
+#photo_3 {
+  width: 100%;
+  height: 400px;
+  padding: .8em;
+}
