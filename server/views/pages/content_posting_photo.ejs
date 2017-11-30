@@ -10,11 +10,7 @@
 
 <body>
   <% include ../partials/header %>
-
-
     <% include ../partials/content_header %>
-
-
       <div class="container">
         <div class="nav_bt_hashtag">
           <div class="row">
@@ -45,47 +41,73 @@
         </div>
       </div>
 
+
+
       <div class="container">
-        <p id="subtitle">
-          #
-          <%= mode %>
-        </p>
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-8">
+            <p id="subtitle">#
+              <%= mode %>
+            </p>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4" style="text-align:right">
+            <a href="/post/write"><button type="button" class="btn btn-primary">Write</button></a>
+          </div>
+        </div>
 
-        <ul class="photo-list">
+        <hr class="hr-no-margin">
 
-          <li id="photo0" class="photo">
-            <img src="/images/fox.jpg" alt="">
-          </li>
-          <li id="photo1" class="photo">
-            <img src="/images/dog.jpg" alt="">
-          </li>
-          <li id="photo2" class="photo">
-            <img src="/images/cat.jpg" alt="">
-          </li>
-          <li id="photo3" class="photo">
-            <img src="/images/cat.jpg" alt="">
-          </li>
-          <li id="photo4" class="photo">
-            <img src="/images/fox.jpg" alt="">
-          </li>
-          <li id="photo5" class="photo">
-            <img src="/images/cat.jpg" alt="">
-          </li>
-          <li id="photo6" class="photo">
-            <img src="/images/dog.jpg" alt="">
-          </li>
-          <li id="photo7" class="photo">
-            <img src="/images/cat.jpg" alt="">
-          </li>
 
-        </ul>
+
+
+
+
+        <div class="row">
+
+          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
+            <a href="/posting/photo" class="thumbnail">
+              <img src="/images/fox.jpg" alt="" class="posting-img">
+              <p>Title : 여우련</p>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
+            <a href="/posting/photo" class="thumbnail">
+              <img src="/images/dog.jpg" alt="" class="posting-img">
+              <p>Title : 개련</p>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
+            <a href="/posting/photo" class="thumbnail">
+              <img src="/images/fox.jpg" alt="" class="posting-img">
+              <p>Title : 여우련</p>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
+            <a href="/posting/photo" class="thumbnail">
+              <img src="/images/fox.jpg" alt="" class="posting-img">
+              <p>Title : 여우련</p>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
+            <a href="/posting/photo" class="thumbnail">
+              <img src="/images/fox.jpg" alt="" class="posting-img">
+              <p>Title : 여우련</p>
+            </a>
+          </div>
+
+
+
+
+
+
+
+
+
+        </div>
+
 
 
       </div>
-
-
-
-
 
       <nav aria-label="Page navigation example" id="table-pagination">
         <ul class="pagination justify-content-center">

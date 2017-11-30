@@ -51,8 +51,6 @@ router.get('/posting/notice', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_posting', {
         num: 1,
         posting: postings,
@@ -114,8 +112,6 @@ router.get('/posting/meet', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_posting', {
         num: 1,
         posting: postings,
@@ -135,8 +131,6 @@ router.get('/posting/photo', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_posting_photo', {
         num: 1,
         posting: postings,
@@ -156,8 +150,6 @@ router.get('/posting/qna', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_posting', {
         num: 1,
         posting: postings,
@@ -177,8 +169,6 @@ Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, posti
             message: error
         });
     }
-    // Render result
-    // Render result
     res.render('content_inf', {
       num: 1,
       posting: postings,
@@ -198,8 +188,6 @@ Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, posti
             message: error
         });
     }
-    // Render result
-    // Render result
     res.render('content_inf', {
       num: 1,
       posting: postings,
@@ -220,8 +208,6 @@ router.get('/inf/advertise', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_inf', {
         num: 1,
         posting: postings,
@@ -241,8 +227,6 @@ router.get('/inf/housing', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_inf', {
         num: 1,
         posting: postings,
@@ -262,8 +246,6 @@ router.get('/inf/lost_found', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_inf', {
         num: 1,
         posting: postings,
@@ -283,8 +265,6 @@ router.get('/inf/others', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_inf', {
         num: 1,
         posting: postings,
@@ -304,8 +284,6 @@ router.get('/inf/part_time_job', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_inf', {
         num: 1,
         posting: postings,
@@ -325,8 +303,6 @@ router.get('/inf/restaurant', function(req, res) {
               message: error
           });
       }
-      // Render result
-      // Render result
       res.render('content_inf', {
         num: 1,
         posting: postings,
@@ -338,7 +314,6 @@ router.get('/inf/restaurant', function(req, res) {
 });
 
 router.get('/post', function(req, res) {
-  // Render result
   res.render('post_element', {
     title: 'post',
     user: req.user
@@ -346,14 +321,12 @@ router.get('/post', function(req, res) {
 });
 
 router.get('/inf/write', function(req, res) {
-  // Render result
   res.render('inf_writing', {
     title: 'Global CAU',
     user: req.user
   });
 });
 router.get('/post/write', function(req, res) {
-  // Render result
   res.render('post_writing', {
     title: 'Global CAU',
     user: req.user
@@ -495,7 +468,7 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', passport.authenticate('local-login', {
   //Success go to Profile Page / Fail go to login page
-  successRedirect: '/',
+  successRedirect: '/intro',
   failureRedirect: '/login',
   failureFlash: true
 }));
@@ -510,7 +483,7 @@ router.get('/signup', function(req, res, next) {
 
 router.post('/signup', passport.authenticate('local-signup', {
   //Success go to Profile Page / Fail go to Signup page
-  successRedirect: '/',
+  successRedirect: '/intro',
   failureRedirect: '/signup',
   failureFlash: true
 }));
@@ -536,7 +509,7 @@ function isLoggedIn(req, res, next) {
 /* GET Logout Page */
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/intro');
 });
 
 
