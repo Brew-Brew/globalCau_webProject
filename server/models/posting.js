@@ -10,8 +10,8 @@ var postingSchema = mongoose.Schema({
         title: String,
         content: String,
         category: String,
-        date: {type: String, default: today.toISOString().substring(0, 10)},
-        views: String,
+        date: {type: String, default: today.toDateString()},
+        views: {type: Number, default: 0},
         name: String
 
 

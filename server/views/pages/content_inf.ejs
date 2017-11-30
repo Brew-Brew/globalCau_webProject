@@ -81,12 +81,12 @@
               <td><%= num++ %></td>
               <td><a href= "/inf/<%= posts._id %>" ><%= posts.title %></a></td>
               <td><%= posts.name %></td>
+              <td><%= posts.views %></td>
               <td>0</td>
-              <td>0</td>
-              <td><%= posts.date %> </td>
+              <td><%= posts.date%> </td>
               <td>
                 <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
-                <a href="//update/<%=posts._id%>" class="btn btn btn-info" >Modify</a>
+                <a href="/inf/update/<%=posts._id%>" class="btn btn btn-info" >Modify</a>
               </td>
             </tr>
           </tbody>
