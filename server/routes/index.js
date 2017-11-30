@@ -352,7 +352,7 @@ router.get('/inf/write', function(req, res) {
     user: req.user
   });
 });
-router.get('/post/write', function(req, res) {
+router.get('/posting/write', function(req, res) {
   // Render result
   res.render('post_writing', {
     title: 'Global CAU',
@@ -394,7 +394,9 @@ router.post('/update', function(req, res) {
 
 router.get('/posting/:id', function(req, res) {
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
-      console.log(postings);
+    postings[0].views +=1;
+    console.log(postings[0].views);
+    postings[0].save();
       if (error) {
           return res.send(400, {
               message: error
@@ -412,7 +414,9 @@ router.get('/posting/:id', function(req, res) {
 });
 router.get('/inf/:id', function(req, res) {
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
-      console.log(postings);
+    console.log(postings);
+    postings[0].views +=1;
+    postings[0].save();
       if (error) {
           return res.send(400, {
               message: error
@@ -455,7 +459,7 @@ router.get('/inf/update/:id', function(req, res){
     });
 });
 
-router.get('/post/update/:id', function(req, res){
+router.get('/posting/update/:id', function(req, res){
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
       console.log(postings);
       if (error) {

@@ -53,7 +53,7 @@
             </p>
           </div>
           <div class="col-sm-4 col-md-4 col-xs-4" style="text-align:right">
-            <a href="/post/write"><button type="button" class="btn btn-primary">Write</button></a>
+            <a href="/posting/write"><button type="button" class="btn btn-primary">Write</button></a>
           </div>
 
         </div>
@@ -78,12 +78,12 @@
               <td><%= num++ %></td>
               <td><a href= "/posting/<%= posts._id %>" ><%= posts.title %></a></td>
               <td><%= posts.name %></td>
-              <td>0</td>
+              <td><%= posts.views%></td>
               <td>0</td>
               <td><%= posts.date %> </td>
               <td>
                 <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
-                <a href="/post/update/<%=posts._id%>" class="btn btn btn-info" >Modify</a>
+                <a href="/posting/update/<%=posts._id%>" class="btn btn btn-info" >Modify</a>
               </td>
             </tr>
           </tbody>
