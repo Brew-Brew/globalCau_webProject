@@ -1,6 +1,7 @@
 // Import Mongoose and password Encrypt
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var today = new Date();
 
 // define the schema for User model
 var postingSchema = mongoose.Schema({
@@ -9,7 +10,7 @@ var postingSchema = mongoose.Schema({
         title: String,
         content: String,
         category: String,
-        date: {type: Date, default: Date.now()},
+        date: {type: String, default: today.toISOString().substring(0, 10)},
         views: String,
         name: String
 

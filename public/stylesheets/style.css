@@ -206,3 +206,102 @@ ul.social-buttons li a{
   width: 200pt;
   height: 100pt;
 }
+#writing_form{
+  margin:auto;
+  width:50%;
+}
+
+#writing_text{
+  width:90%;
+  height:30em;
+  margin:1% 5% 1% 5%;
+  padding:5px;
+  overflow:auto;
+  border:1px solid black;
+}
+#writing_text:hover{
+  border:1px solid black;
+}
+#write_text{
+  width:100%;
+  height:7em;
+}
+
+
+#write_table{
+  margin:auto;
+  width:95%;
+}
+#photo_cancel{
+  width:1em;
+  height:1em;
+}
+#photo_post{
+  width:1em;
+  height:1em;
+}
+#cancel{
+  background-color:#FA5858;
+  color:white;
+}
+#submit{
+  background-color:#5882FA;
+  color:white;
+}
+#fixed_left{
+  width:100%;
+  text-align: left;
+}
+#attachment_name{
+  margin-left:1%;
+  width:70%;
+}
+
+#text_frame{
+  width:100%;
+  height:30em;
+}
+#button_box{
+  margin:auto;
+  width:100%;
+  padding-top:1%;
+}
+.button{
+  border:none;
+  border-radius: .3em;
+  width:6em;
+  height:2em;
+}
+#attachment_name{
+  margin-left:1%;
+  width:70%;
+}
+.content-main{
+  background-color: white;
+  border-color: #0954A0;
+  border-style: solid;
+  border-radius: .3em;
+  height: 20em;
+}
+.content-info, .content-main{
+  text-align: left;
+  margin-bottom: 10px;
+}
+.content-info{
+  padding: .5em .5em;
+  background-color: #0954A0;
+  color: white;
+  border-radius: .3em;
+}
+.input{
+  text-align: left
+}
+#bottom-left{
+  text-align: left
+}
+#bottom-right{
+  text-align: right
+}
+#bottom{
+  margin-bottom: 1em;
+}

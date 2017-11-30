@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include ../partials/stylesheet %>
+</head>
+
+<body>
+  <% include ../partials/header %>
+
+    <!-- Main Content -->
+    <% include ../partials/content_header %>
+
+      <div class="container">
+        <div class="nav_bt_hashtag">
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/notice"><button type="button" class="hash_button" id="hash_button1">#Notice</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/free_posting"><button type="button" class="hash_button" id="hash_button2">#Free_Posting</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/recruiting_study"><button type="button" class="hash_button" id="hash_button3">#Recruting_Study</button></a>
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/meet"><button type="button" class="hash_button" id="hash_button4">#Let's_meet</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/photo"><button type="button" class="hash_button" id="hash_button5">#Photo</button></a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <a href="/posting/qna"><button type="button" class="hash_button" id="hash_button6">#QnA</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="content-info">
+          <div class="row">
+            <div class="col-sm-8 col-md-8 col-xs-8">
+                <h4><strong>Title:</strong> <%= posting[0].title %><h4>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <h4><strong>Date:</strong> <%= posting[0].date %><h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 col-md-8 col-xs-8">
+                <h4><strong>Category:</strong> <%= posting[0].category%><h4>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4">
+              <h4><strong>Writer:</strong> <%= posting[0].name%><h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-main">
+          <div class="container">
+              <%= posting[0].content %>
+          </div>
+
+        </div>
+        <div class="row" id="bottom">
+            <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-left">
+              <a href="/posting/<%=posting[0].category%>" class="btn btn-warning" >Back</a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
+              <a href="/post/update/<%=posting[0]._id%>" class="btn btn btn-info" >Modify</a>
+            </div>
+        </div>
+      </div>
+      <br>
+
+
+
+
+      <% include ../partials/footer %>
+        <% include ../partials/javascript %>
+
+
+</body>
+
+</html>

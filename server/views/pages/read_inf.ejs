@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include ../partials/stylesheet %>
+</head>
+
+<body>
+  <% include ../partials/header %>
+  <!-- Main Content -->
+    <% include ../partials/content_header %>
+
+
+
+    <div class="container">
+      <div class="nav_bt_hashtag">
+        <div class="row">
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/lecture"><button type="button" class="hash_button" id="hash_button1">#Lecture</button></a>
+          </div>
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/restaurant"><button type="button" class="hash_button" id="hash_button2">#Restaurant</button></a>
+          </div>
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/housing"><button type="button" class="hash_button" id="hash_button3">#Housing</button></a>
+          </div>
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/advertise"><button type="button" class="hash_button" id="hash_button4">#Advertise</button></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <a href="/inf/part_time_job"><button type="button" class="hash_button" id="hash_button5">#Part_Time_Job</button></a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <a href="/inf/lost_found"><button type="button" class="hash_button" id="hash_button6">#Lost_Found</button></a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <a href="/inf/others"><button type="button" class="hash_button" id="hash_button7">#Others</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content-info">
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-8">
+              <h4><strong>Title:</strong> <%= posting[0].title %><h4>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <h4><strong>Date:</strong> <%= posting[0].date %><h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-8">
+              <h4><strong>Category:</strong> <%= posting[0].category%><h4>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <h4><strong>Writer:</strong> <%= posting[0].name%><h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-main">
+        <div class="container">
+            <%= posting[0].content %>
+        </div>
+
+      </div>
+      <div class="row" id="bottom">
+          <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-left">
+            <a href="/inf/<%=posting[0].category%>" class="btn btn-warning" >Back</a>
+          </div>
+          <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
+            <a href="/inf/update/<%=posting[0]._id%>" class="btn btn btn-info" >Modify</a>
+          </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+
+    <% include ../partials/footer %>
+      <% include ../partials/javascript %>
+</body>
+
+</html>

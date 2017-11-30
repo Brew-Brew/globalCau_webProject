@@ -27,7 +27,7 @@
               <a href="/inf/housing"><button type="button" class="hash_button" id="hash_button3">#Housing</button></a>
             </div>
             <div class="col-sm-3 col-md-3 col-xs-3">
-              <a href="/inf/housing"><button type="button" class="hash_button" id="hash_button4">#Advertise</button></a>
+              <a href="/inf/advertise"><button type="button" class="hash_button" id="hash_button4">#Advertise</button></a>
             </div>
           </div>
 
@@ -48,88 +48,49 @@
 
 
       <div class="container">
-        <p id="subtitle">#
-          <%= mode %>
-        </p>
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-8">
+            <p id="subtitle">#
+              <%= mode %>
+            </p>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4" style="text-align:right">
+            <a href="/inf/write"><button type="button" class="btn btn-primary">Write</button></a>
+          </div>
+
+        </div>
+
         <table class="table table-hover table-responsive">
           <thead>
             <tr>
               <th width="7%">NO</th>
-              <th width="54%">Title</th>
+              <th width="24%">Title</th>
               <th width="20%">Writer</th>
               <th width="7%">Views</th>
               <th width="7%">Votes</th>
               <th width="15%">Date</th>
+              <th width="30%">Manage</th>
             </tr>
           </thead>
 
           <!--데이터 -->
+
+          <% posting.forEach(function(posts){ %>
           <tbody>
             <tr>
-              <td>8</td>
-              <td>Hello world!! again!</td>
-              <td>Paeng</td>
-              <td>150</td>
+              <td><%= num++ %></td>
+              <td><a href= "/inf/<%= posts._id %>" ><%= posts.title %></a></td>
+              <td><%= posts.name %></td>
               <td>0</td>
-              <td>2017.12.17</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Hello world!!</td>
-              <td>Paeng</td>
-              <td>150</td>
-              <td>100</td>
-              <td>2017.11.30</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Hello world!!</td>
-              <td>Paeng</td>
-              <td>150</td>
-              <td>10</td>
-              <td>2017.11.24</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Hello world!!</td>
-              <td>Paeng</td>
-              <td>150</td>
-              <td>10</td>
-              <td>2017.11.21</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Hello world!!</td>
-              <td>Paeng</td>
-              <td>150</td>
-              <td>10</td>
-              <td>2017.11.15</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>NOTICE!!</td>
-              <td>HS LEE</td>
-              <td>150</td>
-              <td>10</td>
-              <td>2017.11.15</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>NOTICE!!</td>
-              <td>HS LEE</td>
-              <td>150</td>
-              <td>10</td>
-              <td>2017.11.15</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Few tips about this web page</td>
-              <td>HS LEE</td>
-              <td>210</td>
-              <td>53</td>
-              <td>2017.11.14</td>
+              <td>0</td>
+              <td><%= posts.date %> </td>
+              <td>
+                <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
+                <a href="//update/<%=posts._id%>" class="btn btn btn-info" >Modify</a>
+              </td>
             </tr>
           </tbody>
+          <% }); %>
 
         </table>
 

@@ -45,12 +45,13 @@
       </div>
     </div>
 
-    <form id="writing_form" action="/write" method="post">
+    <form id="writing_form" action="/update" method="post">
       <div class="content-info">
+        <input type="hidden" name="id" value="<%= posting[0]._id%>">
         <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
         <input type="hidden" name="menu" value="posting">
         <label for="titel_name">Title</label>
-        <input type="text" name="title" id="title_name" /><br>
+        <input type="text" name="title" id="title_name" value="<%=posting[0].title%>"/><br>
         <label for="category">Category</label>
         <select name="category" id="category">
             <option value="">------------------</option>
@@ -64,7 +65,7 @@
       </div>
 
       <div id="text_frame">
-        <textarea name="content" id="writing_text"></textarea>
+        <textarea name="content" id="writing_text" ><%= posting[0].content%></textarea>
       </div>
 
       <br>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <% include ../partials/stylesheet %>
+</head>
+
+<body>
+  <% include ../partials/header %>
+  <!-- Main Content -->
+    <% include ../partials/content_header %>
+
+
+
+    <div class="container">
+      <div class="nav_bt_hashtag">
+        <div class="row">
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/lecture"><button type="button" class="hash_button" id="hash_button1">#Lecture</button></a>
+          </div>
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/restaurant"><button type="button" class="hash_button" id="hash_button2">#Restaurant</button></a>
+          </div>
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/housing"><button type="button" class="hash_button" id="hash_button3">#Housing</button></a>
+          </div>
+          <div class="col-sm-3 col-md-3 col-xs-3">
+            <a href="/inf/advertise"><button type="button" class="hash_button" id="hash_button4">#Advertise</button></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <a href="/inf/part_time_job"><button type="button" class="hash_button" id="hash_button5">#Part_Time_Job</button></a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <a href="/inf/lost_found"><button type="button" class="hash_button" id="hash_button6">#Lost_Found</button></a>
+          </div>
+          <div class="col-sm-4 col-md-4 col-xs-4">
+            <a href="/inf/others"><button type="button" class="hash_button" id="hash_button7">#Others</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form id="writing_form" action="/write" method="post">
+      <div class="content-info">
+        <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
+        <input type="hidden" name="menu" value="inf">
+        <label for="titel_name">Title</label>
+        <input type="text" name="title" id="title_name" /><br>
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="">------------------</option>
+          <option value="lecture">#Lecture</option>
+          <option value="restaurant">#Restaurant</option>
+          <option value="housing">#Housing</option>
+          <option value="advertise">#Advertise</option>
+          <option value="part_time_job">#Part_Time_Job</option>
+          <option value="lost_found">#Lost_Found</option>
+          <option value="others">#Others</option>
+        </select>
+      </div>
+      <div id="text_frame">
+        <textarea name="content" id="writing_text"></textarea>
+      </div>
+
+      <br>
+      <div class="top_boundary" id="button_box">
+        <table>
+          <colgroup>
+            <col style="width:80%;">
+            <col style="width:10%;">
+            <col style="width:10%;">
+          </colgroup>
+          <tr>
+            <td id="fixed_left">
+              <button class="button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+              List
+            </button>
+            </td>
+            <td>
+              <button type="button" class="button" id="cancel">
+              <img id="photo_cancel" src="/images/cancel.png">
+              Cancel
+            </button>
+            </td>
+            <td>
+              <button type="submit" class="button" id="submit" name="submit" value="submit">
+                  <img id="photo_post" src="/images/post.png">
+                  Post
+            </button>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+      </div>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <% include ../partials/footer %>
+      <% include ../partials/javascript %>
+</body>
+
+</html>

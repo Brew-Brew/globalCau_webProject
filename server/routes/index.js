@@ -24,137 +24,317 @@ router.get('/intro', function(req, res) {
 
 router.get('/posting', function(req, res) {
   // Render result
-  res.render('content_posting', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: 'Notice'
-  });
+  Posting.find({"category": "notice"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_posting', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "notice"
+      });
+    });
 });
 
 router.get('/posting/notice', function(req, res) {
-  // Render result
-  res.render('content_posting', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: 'Notice'
-  });
+  Posting.find({"category": "notice"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_posting', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "notice"
+      });
+    });
 });
 
 router.get('/posting/free_posting', function(req, res) {
   // Render result
-  res.render('content_posting', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: 'Free_Posting'
-  });
+  Posting.find({"category": "free_posting"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_posting', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "free_posting"
+      });
+    });
 });
 
 router.get('/posting/recruiting_study', function(req, res) {
   // Render result
-  res.render('content_posting', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: 'Recruting_Study'
-  });
+  Posting.find({"category": "recruiting_study"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_posting', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "recruiting_study"
+      });
+    });
 });
 
 router.get('/posting/meet', function(req, res) {
   // Render result
-  res.render('content_posting', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Let's_meet"
-  });
+  Posting.find({"category": "meet"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_posting', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "meet"
+      });
+    });
 });
 
 router.get('/posting/photo', function(req, res) {
   // Render result
-  res.render('content_posting_photo', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Photo"
-  });
+  Posting.find({"category": "photo"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_posting_photo', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "photo"
+      });
+    });
 });
 
 router.get('/posting/qna', function(req, res) {
   // Render result
-  res.render('content_posting', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "QnA"
-  });
+  Posting.find({"category": "qna"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_posting', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "qna"
+      });
+    });
 });
 
 router.get('/inf', function(req, res) {
-  // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Lecture"
+  // List all connects and sort by Date
+Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, postings) {
+    console.log(postings);
+    if (error) {
+        return res.send(400, {
+            message: error
+        });
+    }
+    // Render result
+    // Render result
+    res.render('content_inf', {
+      num: 1,
+      posting: postings,
+      title: 'Global CAU',
+      user: req.user,
+      mode: "Lecture"
+    });
   });
 });
 
 router.get('/inf/lecture', function(req, res) {
-  // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Lecture"
+  // List all connects and sort by Date
+Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, postings) {
+    console.log(postings);
+    if (error) {
+        return res.send(400, {
+            message: error
+        });
+    }
+    // Render result
+    // Render result
+    res.render('content_inf', {
+      num: 1,
+      posting: postings,
+      title: 'Global CAU',
+      user: req.user,
+      mode: "Lecture"
+    });
   });
+
 });
 
 router.get('/inf/advertise', function(req, res) {
   // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Advertise"
-  });
+  Posting.find({"category": "advertise"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "Advertise"
+      });
+    });
 });
 
 router.get('/inf/housing', function(req, res) {
   // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Housing"
-  });
+  Posting.find({"category": "housing"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "Housing"
+      });
+    });
 });
 
 router.get('/inf/lost_found', function(req, res) {
   // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Lost_Found"
-  });
+  Posting.find({"category": "lost_found"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "Lost_Found"
+      });
+    });
 });
 
 router.get('/inf/others', function(req, res) {
   // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Others"
-  });
+  Posting.find({"category": "others"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "Others"
+      });
+    });
 });
 
 router.get('/inf/part_time_job', function(req, res) {
   // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Part_Time_Job"
-  });
+  Posting.find({"category": "part_time_job"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "Part_Time_Job"
+      });
+    });
 });
 
 router.get('/inf/restaurant', function(req, res) {
   // Render result
-  res.render('content_inf', {
-    title: 'Global CAU',
-    user: req.user,
-    mode: "Restaurant"
-  });
+  Posting.find({"category": "restaurant"}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('content_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user,
+        mode: "Restaurant"
+      });
+    });
 });
 
 router.get('/post', function(req, res) {
@@ -165,10 +345,17 @@ router.get('/post', function(req, res) {
   });
 });
 
-router.get('/write', function(req, res) {
+router.get('/inf/write', function(req, res) {
+  // Render result
+  res.render('inf_writing', {
+    title: 'Global CAU',
+    user: req.user
+  });
+});
+router.get('/post/write', function(req, res) {
   // Render result
   res.render('post_writing', {
-    title: 'write',
+    title: 'Global CAU',
     user: req.user
   });
 });
@@ -186,10 +373,106 @@ router.post('/write', function(req, res) {
       console.log(err);
       res.redirect('/home');
     }
-    res.redirect('/inf/advertise');
+    res.redirect('/' + req.body.menu + '/' + posting.category);
   });
 });
 
+router.post('/update', function(req, res) {
+  console.log(req.body);
+  Posting.find({"_id": req.body.id}).sort({date:-1}).exec(function(error, posting) {
+    posting[0].title = req.body.title;
+    posting[0].content = req.body.content;
+    posting[0].save(function(err) {
+      if (err) {
+        console.log(err);
+        res.redirect('/home');
+      }
+      res.redirect('/' + req.body.menu + '/' + posting[0]._id);
+    });
+    });
+});
+
+router.get('/posting/:id', function(req, res) {
+  Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('read_posting', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user
+      });
+    });
+});
+router.get('/inf/:id', function(req, res) {
+  Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('read_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user
+      });
+    });
+});
+
+router.get('/delete/:id', function(req, res){
+    console.log(req.params.id);
+    Posting.remove({ _id : req.params.id }, function(err){
+        res.redirect('back');
+    });
+});
+
+router.get('/inf/update/:id', function(req, res){
+  Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('update_inf', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user
+      });
+    });
+});
+
+router.get('/post/update/:id', function(req, res){
+  Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
+      console.log(postings);
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      // Render result
+      // Render result
+      res.render('update_post', {
+        num: 1,
+        posting: postings,
+        title: 'Global CAU',
+        user: req.user
+      });
+    });
+});
 /* Get comment by */
 router.get('/intro/:commentId', function(req, res, id) {
 
