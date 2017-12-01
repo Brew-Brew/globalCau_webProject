@@ -86,11 +86,11 @@
             <div class="row">
               <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
               <input type="hidden" id="hidden" name="postid" value="<%= posting[0]._id %>">
-              <div class="col-md-2">
+              <div class="col-md-4">
                 <label for="titel_name">Title</label>
                 <input type="text" name="title" id="title_name" /><br>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <textarea name="content" style="width:100%"></textarea>
               </div>
               <div class="col-md-2">
@@ -99,11 +99,12 @@
                     Post
               </button>
               </div>
+              </div>
             </div>
 
           </div>
         </form>
-        <div id"comment-content">
+        <div class="comment-content" >
           <% if(comment[0] == undefined) {%>
             <h4>댓글이 없습니다.</h4>
           <%} else {%>
