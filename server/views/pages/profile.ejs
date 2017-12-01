@@ -11,10 +11,9 @@
 <body>
   <% include ../partials/header %>
 
-    <div class="container">
+    <div class="container profile">
       <h1><%= title %></h1>
-      <div class="datails">
-
+      <div class="details">
         <div class="card text-xs-center">
           <br>
           <div class="card-block">
@@ -24,13 +23,12 @@
                 <strong>Email</strong>:
                 <%= user.local.email %>
             </p>
-            <a href="/home" class="btn btn-primary">시작하기</a>
-            <br>
-            <a href="/logout" class="btn btn-default">로그아웃</a>
+            <a href="/logout" class="btn btn-primary">로그아웃</a>
           </div>
         </div>
       </div>
     </div>
+
     <% include ../partials/footer %>
       <% include ../partials/javascript %>
 </body>
