@@ -13,37 +13,7 @@
   <!-- Main Content -->
     <% include ../partials/content_header %>
 
-
-
-    <div class="container">
-      <div class="nav_bt_hashtag">
-        <div class="row">
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <a href="/posting/notice"><button type="button" class="hash_button" id="hash_button1">#Notice</button></a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <a href="/posting/free_posting"><button type="button" class="hash_button" id="hash_button2">#Free_Posting</button></a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <a href="/posting/recruiting_study"><button type="button" class="hash_button" id="hash_button3">#Recruting_Study</button></a>
-          </div>
-
-
-        </div>
-
-        <div class="row">
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <a href="/posting/meet"><button type="button" class="hash_button" id="hash_button4">#Let's_meet</button></a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <a href="/posting/photo"><button type="button" class="hash_button" id="hash_button5">#Photo</button></a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <a href="/posting/qna"><button type="button" class="hash_button" id="hash_button6">#QnA</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <% include ../partials/content_header_posting %>
 
     <form id="writing_form" action="/write" method="post">
       <div class="content-info">
@@ -58,7 +28,6 @@
             <option value="free_posting">#Free_Posting</option>
             <option value="recruiting_study">#Recruting_Study</option>
             <option value="meet">#Let's_meet</option>
-            <option value="photo">#Photo</option>
             <option value="qna">#Qna</option>
         </select>
       </div>

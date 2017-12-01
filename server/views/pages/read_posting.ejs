@@ -101,23 +101,25 @@
 
             </div>
           </form>
-        <div class="comment-content" >
-          <% if(comment[0] == undefined) {%>
-            <h4>댓글이 없습니다.</h4>
-          <%} else {%>
-          <div class="row">
-            <div class="col-md-4">
-              Writer: <%= comment[0].name %>
+          <div class="comment-content" >
+            <% comment.forEach(function(comments){ %>
+            <% if(comments == undefined) {%>
+              <h4>댓글이 없습니다.</h4>
+            <%} else {%>
+            <div class="row">
+              <div class="col-md-4">
+                Writer: <%= comments.name %>
+              </div>
+              <div class="col-md-2">
+               Title: <%= comments.title %>
+              </div>
+              <div class="col-md-6">
+                <%= comments.content %>
+              </div>
             </div>
-            <div class="col-md-2">
-             Title: <%= comment[0].title %>
-            </div>
-            <div class="col-md-6">
-               <%= comment[0].content %>
-            </div>
+            <% } %>
+            <% }); %>
           </div>
-          <% } %>
-        </div>
       </div>
       </div>
       <br>

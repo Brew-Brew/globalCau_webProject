@@ -6,6 +6,10 @@ var Users = require('../models/users');
 var Posting = require('../models/posting');
 var Comment = require('../models/comment');
 var nodemailer = require('nodemailer');
+var fs = require('fs');
+var mime = require('mime');
+var IMAGE_TYPES = ['image/jpeg','image/jpg', 'image/png'];
+var Images = require('../models/posting_photo');
 
 /* GET intro page. */
 router.get('/', function(req, res, next) {
@@ -125,21 +129,20 @@ router.get('/posting/meet', function(req, res) {
 
 router.get('/posting/photo', function(req, res) {
   // Render result
-  Posting.find({"category": "photo"}).sort({date:-1}).exec(function(error, postings) {
-      console.log(postings);
+  Images.find().sort('-created').populate('user', 'local.email').exec(function(error, images) {
       if (error) {
-          return res.send(400, {
+          return res.status(400).send({
               message: error
           });
       }
+      // REnder galley
       res.render('content_posting_photo', {
-        num: 1,
-        posting: postings,
-        title: 'Global CAU',
-        user: req.user,
-        mode: "photo"
+          title: 'Global CAU',
+          user:req.user,
+          images: images,
+          gravatar: gravatar.url(images.email ,  {s: '80', r: 'x', d: 'retro'}, true)
       });
-    });
+  });
 });
 
 router.get('/posting/qna', function(req, res) {

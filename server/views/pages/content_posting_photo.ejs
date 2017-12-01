@@ -11,127 +11,95 @@
 <body>
   <% include ../partials/header %>
     <% include ../partials/content_header %>
-      <div class="container">
-        <div class="nav_bt_hashtag">
-          <div class="row">
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/notice"><button type="button" class="hash_button" id="hash_button1">#Notice</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/free_posting"><button type="button" class="hash_button" id="hash_button2">#Free_Posting</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/recruiting_study"><button type="button" class="hash_button" id="hash_button3">#Recruting_Study</button></a>
-            </div>
+      <% include ../partials/content_header_posting %>
 
 
-          </div>
+        <div class="container">
+
 
           <div class="row">
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/meet"><button type="button" class="hash_button" id="hash_button4">#Let's_meet</button></a>
+            <div class="col-sm-8 col-md-8 col-xs-8">
+              <p id="subtitle">#Photo
+              </p>
             </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/photo"><button type="button" class="hash_button" id="hash_button5">#Photo</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/qna"><button type="button" class="hash_button" id="hash_button6">#QnA</button></a>
+            <div class="col-sm-4 col-md-4 col-xs-4" style="text-align:right">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createImage">Upload</button>
             </div>
           </div>
-        </div>
-      </div>
 
+          <!-- Modal -->
+          <div class="modal fade" id="createImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <form action="/images" method="post" enctype="multipart/form-data">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    <h4 class="modal-title" id="myModalLabel">Upload a image file</h4>
+                  </div>
 
-
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-8 col-xs-8">
-            <p id="subtitle">#
-              <%= mode %>
-            </p>
+                  <div class="modal-body">
+                    <fieldset class="form-group">
+                      <label for="itle">Title</label>
+                      <input type="text" id="itle" name="title" class="form-control" placeholder="Image Title" required="">
+                    </fieldset>
+                    <label class="file" style="width: 100%">
+                                <input type="file" id="image" name="image">
+                                <span class="file-custom"></span>
+                            </label>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-4 col-md-4 col-xs-4" style="text-align:right">
-            <a href="/post/write"><button type="button" class="btn btn-primary">Write</button></a>
+          <hr>
+          <div class="row">
+            <% images.forEach(function(images){ %>
+              <div class="col-lg-4">
+                <a href="/posting" class="thumbnail">
+                  <figure class="figure">
+                    <img src="/images/<%= images.imageName %>" class="figure-img img-fluid img-rounded" alt="<%= images.imageName %>">
+                    <figcaption class="figure-caption">
+                      <%= images.title %>
+                    </figcaption>
+
+                    <small>Upload by: <%= images.user.local.email %></small>
+                  </figure>
+                </a>
+              </div>
+              <% }); %>
           </div>
-        </div>
-
-        <hr class="hr-no-margin">
-
-
-
-
-
-
-        <div class="row">
-
-          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
-            <a href="/posting/photo" class="thumbnail">
-              <img src="/images/fox.jpg" alt="" class="posting-img">
-              <p>Title : 여우련</p>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
-            <a href="/posting/photo" class="thumbnail">
-              <img src="/images/dog.jpg" alt="" class="posting-img">
-              <p>Title : 개련</p>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
-            <a href="/posting/photo" class="thumbnail">
-              <img src="/images/fox.jpg" alt="" class="posting-img">
-              <p>Title : 여우련</p>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
-            <a href="/posting/photo" class="thumbnail">
-              <img src="/images/fox.jpg" alt="" class="posting-img">
-              <p>Title : 여우련</p>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4 posting-img-frame">
-            <a href="/posting/photo" class="thumbnail">
-              <img src="/images/fox.jpg" alt="" class="posting-img">
-              <p>Title : 여우련</p>
-            </a>
-          </div>
-
-
-
-
-
-
-
-
 
         </div>
 
+        <nav aria-label="Page navigation example" id="table-pagination">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#">6</a></li>
+            <li class="page-item"><a class="page-link" href="#">7</a></li>
+            <li class="page-item"><a class="page-link" href="#">8</a></li>
+            <li class="page-item"><a class="page-link" href="#">9</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
 
 
-      </div>
-
-      <nav aria-label="Page navigation example" id="table-pagination">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">4</a></li>
-          <li class="page-item"><a class="page-link" href="#">5</a></li>
-          <li class="page-item"><a class="page-link" href="#">6</a></li>
-          <li class="page-item"><a class="page-link" href="#">7</a></li>
-          <li class="page-item"><a class="page-link" href="#">8</a></li>
-          <li class="page-item"><a class="page-link" href="#">9</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-
-
-      <% include ../partials/footer %>
-        <% include ../partials/javascript %>
+        <% include ../partials/footer %>
+          <% include ../partials/javascript %>
 </body>
 
 </html>
