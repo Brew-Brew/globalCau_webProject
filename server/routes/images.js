@@ -63,7 +63,7 @@ exports.uploadImage = function(req, res) {
                 return res.status(500).send('Woh, something bad happened here');
             }
             // Redirect to galley's page
-            res.redirect('/photo');
+            res.redirect('/posting/photo');
 
         });
     });

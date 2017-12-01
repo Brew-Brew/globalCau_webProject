@@ -80,7 +80,6 @@ app.use(passport.session());
 app.use(flash());
 
 app.post('/images', images.hasAuthorization, upload.single('image'), images.uploadImage);
-
 app.use('/', index);
 app.use('/home', index);
 app.use('/users', users);
