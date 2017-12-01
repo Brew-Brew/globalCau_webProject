@@ -331,3 +331,38 @@ ul.social-buttons li a{
   background-color: #F2F2F2;
   padding: 1em 1em;
 }
+
+.file_input_textbox{
+  float:left;
+}
+.file_input_div{
+  position:relative;
+  width: 230px;
+  height: 50px;
+  overflow: hidden;
+  float: left;
+}
+.file_input_button{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  background-color:#0954A0;
+  color:#ffffff;
+  border-style:solid;
+}
+.file_input_hidden{
+  position:absolute;
+  right:0px;
+  top: 0px;
+  width: 100%;
+  opacity:0;
+
+}
+.container-content{
+  width: 100%;
+  height: auto;
+  margin-bottom:100px;
+}
+.image-content{
+  float:left;
+}
