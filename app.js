@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // Import Routes
+var multer  = require('multer');
+var upload = multer({ dest:'./public/uploads/', limits: {fileSize: 1000000, files:1} });
 var index = require('./server/routes/index');
 var users = require('./server/routes/users');
+var images = require('./server/routes/images');
 
 // ODM With Mongoose
 var mongoose = require('mongoose');
@@ -76,10 +79,12 @@ app.use(passport.session());
 // flash messages
 app.use(flash());
 
+app.post('/images', images.hasAuthorization, upload.single('image'), images.uploadImage);
 
 app.use('/', index);
 app.use('/home', index);
 app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

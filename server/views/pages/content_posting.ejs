@@ -14,111 +14,96 @@
     <!-- Main Content -->
     <% include ../partials/content_header %>
 
-      <div class="container">
-        <div class="nav_bt_hashtag">
+      <% include ../partials/content_header_posting %>
+
+
+
+        <div class="container">
           <div class="row">
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/notice"><button type="button" class="hash_button" id="hash_button1">#Notice</button></a>
+            <div class="col-sm-8 col-md-8 col-xs-8">
+              <p id="subtitle">#
+                <%= mode %>
+              </p>
             </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/free_posting"><button type="button" class="hash_button" id="hash_button2">#Free_Posting</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/recruiting_study"><button type="button" class="hash_button" id="hash_button3">#Recruting_Study</button></a>
-            </div>
-
-
-          </div>
-
-          <div class="row">
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/meet"><button type="button" class="hash_button" id="hash_button4">#Let's_meet</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/photo"><button type="button" class="hash_button" id="hash_button5">#Photo</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/qna"><button type="button" class="hash_button" id="hash_button6">#QnA</button></a>
+            <div class="col-sm-4 col-md-4 col-xs-4" style="text-align:right">
+              <a href="/posting/write"><button type="button" class="btn btn-primary">Write</button></a>
             </div>
           </div>
+
+
+          <table class="table table-hover table-responsive">
+            <thead>
+              <tr>
+                <th width="7%">NO</th>
+                <th width="24%">Title</th>
+                <th width="20%">Writer</th>
+                <th width="7%">Views</th>
+                <th width="7%">Votes</th>
+                <th width="15%">Date</th>
+                <th width="30%">Manage</th>
+              </tr>
+            </thead>
+
+            <!--데이터 -->
+
+            <% posting.forEach(function(posts){ %>
+              <tbody>
+                <tr>
+                  <td>
+                    <%= num++ %>
+                  </td>
+                  <td>
+                    <a href="/posting/<%= posts._id %>">
+                      <%= posts.title %>
+                    </a>
+                  </td>
+                  <td>
+                    <%= posts.name %>
+                  </td>
+                  <td>
+                    <%= posts.views%>
+                  </td>
+                  <td>0</td>
+                  <td>
+                    <%= posts.date %>
+                  </td>
+                  <td>
+                    <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
+                    <a href="/posting/update/<%=posts._id%>" class="btn btn btn-info">Modify</a>
+                  </td>
+                </tr>
+              </tbody>
+
+              <% }); %>
+                <!-- 데이터 -->
+
+          </table>
+
+          <nav aria-label="Page navigation example" id="table-pagination">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+              <li class="page-item"><a class="page-link" href="#">7</a></li>
+              <li class="page-item"><a class="page-link" href="#">8</a></li>
+              <li class="page-item"><a class="page-link" href="#">9</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+
         </div>
-      </div>
 
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-8 col-xs-8">
-            <p id="subtitle">#
-              <%= mode %>
-            </p>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4" style="text-align:right">
-            <a href="/posting/write"><button type="button" class="btn btn-primary">Write</button></a>
-          </div>
-        </div>
-
-
-        <table class="table table-hover table-responsive">
-          <thead>
-            <tr>
-              <th width="7%">NO</th>
-              <th width="24%">Title</th>
-              <th width="20%">Writer</th>
-              <th width="7%">Views</th>
-              <th width="7%">Votes</th>
-              <th width="15%">Date</th>
-              <th width="30%">Manage</th>
-            </tr>
-          </thead>
-
-          <!--데이터 -->
-
-          <% posting.forEach(function(posts){ %>
-          <tbody>
-            <tr>
-              <td><%= num++ %></td>
-              <td><a href= "/posting/<%= posts._id %>" ><%= posts.title %></a></td>
-              <td><%= posts.name %></td>
-              <td><%= posts.views%></td>
-              <td>0</td>
-              <td><%= posts.date %> </td>
-              <td>
-                <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
-                <a href="/posting/update/<%=posts._id%>" class="btn btn btn-info" >Modify</a>
-              </td>
-            </tr>
-          </tbody>
-
-          <% }); %>
-          <!-- 데이터 -->
-
-        </table>
-
-        <nav aria-label="Page navigation example" id="table-pagination">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item"><a class="page-link" href="#">6</a></li>
-            <li class="page-item"><a class="page-link" href="#">7</a></li>
-            <li class="page-item"><a class="page-link" href="#">8</a></li>
-            <li class="page-item"><a class="page-link" href="#">9</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
-
-
-      <% include ../partials/footer %>
-        <% include ../partials/javascript %>
+        <% include ../partials/footer %>
+          <% include ../partials/javascript %>
 
 
 </body>
