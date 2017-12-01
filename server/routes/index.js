@@ -8,7 +8,6 @@ var Images = require('../models/posting_photo');
 var nodemailer = require('nodemailer');
 var fs = require('fs');
 var mime = require('mime');
-
 var IMAGE_TYPES = ['image/jpeg','image/jpg', 'image/png'];
 
 /* GET intro page. */
