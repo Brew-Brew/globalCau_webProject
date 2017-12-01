@@ -325,13 +325,18 @@ router.get('/post', function(req, res) {
 });
 
 router.get('/inf/write', function(req, res) {
+  if (req.user == undefined) {
+    res.redirect('/login');
+  }
   res.render('inf_writing', {
     title: 'Global CAU',
     user: req.user
   });
 });
 router.get('/posting/write', function(req, res) {
-  // Render result
+  if (req.user == undefined) {
+    res.redirect('/login');
+  }
   res.render('post_writing', {
     title: 'Global CAU',
     user: req.user
@@ -386,6 +391,9 @@ router.post('/update', function(req, res) {
 });
 
 router.get('/posting/:id', function(req, res) {
+  if (req.user == undefined) {
+    res.redirect('/login');
+  }
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
     postings[0].views +=1;
     postings[0].save();
@@ -434,6 +442,9 @@ router.get('/posting/photo/:id',function(req,res){
 
 
 router.get('/inf/:id', function(req, res) {
+  if (req.user == undefined) {
+    res.redirect('/login');
+  }
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
     postings[0].views +=1;
     postings[0].save();
