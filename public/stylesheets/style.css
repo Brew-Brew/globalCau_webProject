@@ -305,3 +305,7 @@ ul.social-buttons li a{
 #bottom{
   margin-bottom: 1em;
 }
+.comment{
+  background-color: #F2F2F2;
+  padding: 1em 1em;
+}

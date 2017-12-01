@@ -78,6 +78,47 @@
               <a href="/posting/update/<%=posting[0]._id%>" class="btn btn btn-info" >Modify</a>
             </div>
         </div>
+        <div class="comment" >
+          <form action="/comment/write" method="post">
+            <div class="comment-write">
+              <div class="row">
+                <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
+                <input type="hidden" id="hidden" name="postid" value="<%= posting[0]._id %>">
+                <div class="col-md-4">
+                  <label for="titel_name">Title</label>
+                  <input type="text" name="title" id="title_name" /><br>
+                </div>
+                <div class="col-md-6">
+                  <textarea name="content" style="width:100%"></textarea>
+                </div>
+                <div class="col-md-2">
+                  <button type="submit" class="button" id="submit" name="submit" value="submit">
+                      <img id="photo_post" src="/images/post.png">
+                      Post
+                </button>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        <div class="comment-content" >
+          <% if(comment[0] == undefined) {%>
+            <h4>댓글이 없습니다.</h4>
+          <%} else {%>
+          <div class="row">
+            <div class="col-md-4">
+              Writer: <%= comment[0].name %>
+            </div>
+            <div class="col-md-2">
+             Title: <%= comment[0].title %>
+            </div>
+            <div class="col-md-6">
+              <%= comment[0].content %>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
       </div>
       <br>
 

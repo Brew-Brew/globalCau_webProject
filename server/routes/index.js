@@ -4,6 +4,7 @@ var passport = require('passport');
 var gravatar = require('gravatar');
 var Users = require('../models/users');
 var Posting = require('../models/posting');
+var Comment = require('../models/comment');
 var nodemailer = require('nodemailer');
 
 /* GET intro page. */
@@ -360,7 +361,7 @@ router.get('/posting/write', function(req, res) {
   });
 });
 
-/* Create connects */
+
 router.post('/write', function(req, res) {
   console.log(req.body);
   var posting = new Posting();
@@ -374,6 +375,21 @@ router.post('/write', function(req, res) {
       res.redirect('/home');
     }
     res.redirect('/' + req.body.menu + '/' + posting.category);
+  });
+});
+
+router.post('/comment/write', function(req, res) {
+  var comment = new Comment();
+  comment.postId= req.body.postid;
+  comment.title = req.body.title;
+  comment.name = req.body.name;
+  comment.content = req.body.content;
+  comment.save(function(err) {
+    if (err) {
+      console.log(err);
+      res.redirect('/home');
+    }
+    res.redirect('back');
   });
 });
 
@@ -395,8 +411,9 @@ router.post('/update', function(req, res) {
 router.get('/posting/:id', function(req, res) {
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
     postings[0].views +=1;
-    console.log(postings[0].views);
     postings[0].save();
+
+    Comment.find({"postId": (req.params.id).valueOf()}).sort({date:-1}).exec(function(error, comment){
       if (error) {
           return res.send(400, {
               message: error
@@ -406,17 +423,20 @@ router.get('/posting/:id', function(req, res) {
       // Render result
       res.render('read_posting', {
         num: 1,
+        comment: comment,
         posting: postings,
         title: 'Global CAU',
         user: req.user
       });
     });
+  });
 });
 router.get('/inf/:id', function(req, res) {
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
-    console.log(postings);
     postings[0].views +=1;
     postings[0].save();
+
+    Comment.find({"postId": (req.params.id).valueOf()}).sort({date:-1}).exec(function(error, comment){
       if (error) {
           return res.send(400, {
               message: error
@@ -426,11 +446,13 @@ router.get('/inf/:id', function(req, res) {
       // Render result
       res.render('read_inf', {
         num: 1,
+        comment: comment,
         posting: postings,
         title: 'Global CAU',
         user: req.user
       });
     });
+  });
 });
 
 router.get('/delete/:id', function(req, res){
@@ -477,10 +499,7 @@ router.get('/posting/update/:id', function(req, res){
       });
     });
 });
-/* Get comment by */
-router.get('/intro/:commentId', function(req, res, id) {
 
-});
 
 // Check authorization
 function hasAuthorization(req, res, next) {

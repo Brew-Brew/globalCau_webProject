@@ -4,19 +4,16 @@ var bcrypt   = require('bcrypt-nodejs');
 var today = new Date();
 
 // define the schema for User model
-var postingSchema = mongoose.Schema({
+var commentSchema = mongoose.Schema({
     // Using local for Local Strategy Passport
+        postId: String,
         title: String,
         content: String,
-        category: String,
         date: {type: String, default: today.toDateString()},
-        views: {type: Number, default: 0},
         name: String
-
-
 
 });
 
 
 // create the model for users and expose it to our app
-module.exports = mongoose.model('Posting', postingSchema);
+module.exports = mongoose.model('Comment', commentSchema);
