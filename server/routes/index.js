@@ -166,7 +166,7 @@ router.get('/posting/qna', function(req, res) {
 
 router.get('/inf', function(req, res) {
   // List all connects and sort by Date
-Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, postings) {
+  Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, postings) {
     console.log(postings);
     if (error) {
         return res.send(400, {
@@ -185,7 +185,7 @@ Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, posti
 
 router.get('/inf/lecture', function(req, res) {
   // List all connects and sort by Date
-Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, postings) {
+  Posting.find({"category": "lecture"}).sort({date:-1}).exec(function(error, postings) {
     console.log(postings);
     if (error) {
         return res.send(400, {
@@ -416,6 +416,31 @@ router.get('/posting/:id', function(req, res) {
     });
   });
 });
+
+router.get('/posting/photo/:id',function(req,res){
+  Images.find({"_id": req.params.id}).exec(function(error, images){
+    images[0].views +=1;
+    images[0].save();
+
+    Comment.find({"postId": (req.params.id).valueOf()}).sort({date:-1}).exec(function(error, comment){
+      if (error) {
+          return res.send(400, {
+              message: error
+          });
+      }
+      res.render('read_posting_photo', {
+        title: 'Global CAU',
+        user:req.user,
+        images: images,
+        comment:comment,
+        gravatar: gravatar.url(images.email ,  {s: '80', r: 'x', d: 'retro'}, true)
+      });
+    });
+  });
+});
+
+
+
 router.get('/inf/:id', function(req, res) {
   if (req.user == undefined) {
     res.redirect('/login');
