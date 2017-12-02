@@ -34,11 +34,11 @@
               <tr>
                 <th width="7%">NO</th>
                 <th width="24%">Title</th>
-                <th width="20%">Writer</th>
+                <th width="10%">Writer</th>
                 <th width="7%">Views</th>
-                <th width="7%">Votes</th>
+                <th width="7%">Likes</th>
                 <th width="15%">Date</th>
-                <th width="30%">Manage</th>
+                <th width="40%">Manage</th>
               </tr>
             </thead>
 
@@ -61,7 +61,9 @@
                   <td>
                     <%= posts.views %>
                   </td>
-                  <td>0</td>
+                  <td>
+                    <%= posts.likes %>
+                  </td>
                   <td>
                     <%= posts.date%>
                   </td>

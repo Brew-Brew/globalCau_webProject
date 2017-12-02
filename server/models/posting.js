@@ -11,6 +11,7 @@ var postingSchema = mongoose.Schema({
         category: String,
         date: {type: String, default: today.toDateString()},
         views: {type: Number, default: 0},
+        likes: {type: Number, default: 0},
         name: String
 
 

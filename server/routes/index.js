@@ -475,6 +475,22 @@ router.get('/delete/:id', function(req, res){
     });
 });
 
+router.get('/comment/delete/:id', function(req, res){
+    console.log(req.params.id);
+    Comment.remove({ _id : req.params.id }, function(err){
+        res.redirect('back');
+    });
+});
+
+router.get('/like/:id', function(req, res) {
+  Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
+    postings[0].likes +=1;
+    postings[0].save();
+    res.redirect('back');
+    });
+  });
+
+
 router.get('/inf/update/:id', function(req, res){
   Posting.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
       console.log(postings);
