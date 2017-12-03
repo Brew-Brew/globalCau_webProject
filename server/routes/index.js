@@ -418,6 +418,9 @@ router.get('/posting/:id', function(req, res) {
 });
 
 router.get('/posting/photo/:id',function(req,res){
+  if (req.user == undefined) {
+    res.redirect('/login');
+  }
   Images.find({"_id": req.params.id}).exec(function(error, images){
     images[0].views +=1;
     images[0].save();
