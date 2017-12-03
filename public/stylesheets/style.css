@@ -1,3 +1,341 @@
+@media all and (max-width:479px) {
+  .container {
+    max-width: 540px;
+  }
+  .header_nav{
+    font-size: 0.8em!important;
+  }
+  #header_titleName{
+    font-size: 2.5em!important;
+  }
+  h1{
+    font-size:1em;
+  }
+  p{
+    font-size: 0.5em;
+  }
+  footer div span{
+    font-size: 11px;
+  }
+  footer div p{
+    font-size: 11px;
+  }
+  footer{
+    padding:20pt 0 20pt 0;
+  }
+  section{
+    padding : 1rem 0!important;
+  }
+  #hashrow_1{
+    left:15%;
+  }
+  #hashrow_2{
+    left:24%;
+    margin-bottom:50px;
+  }
+  #hashrow_3{
+    left:10%;
+  }
+  #hashrow_4{
+    left:18%;
+    margin-bottom:100px;
+  }
+  .hash_button{
+    font-size: 0.7em;
+    height:2.4em;
+  }
+  .btn{
+    font-size: 0.5em;
+  }
+  table{
+    font-size:0.5em;
+  }
+  li{
+    font-size:0.5em;
+  }
+}
+@media all and (min-width:480px) {
+  .container {
+    max-width: 540px;
+  }
+  .header_nav{
+    font-size: 0.8em!important;
+  }
+  #header_titleName{
+    font-size: 2.5em!important;
+  }
+  h1{
+    font-size:1em;
+  }
+  p{
+    font-size: 0.5em;
+  }
+  footer div span{
+    font-size: 11px;
+  }
+  footer div p{
+    font-size: 11px;
+  }
+  footer{
+    padding:20pt 0 20pt 0;
+  }
+  section{
+    padding : 1rem 0!important;
+  }
+  #hashrow_1{
+    left:23%;
+  }
+  #hashrow_2{
+    left:30%;
+    margin-bottom:50px;
+  }
+  #hashrow_3{
+    left:15%;
+  }
+  #hashrow_4{
+    left:20%;
+    margin-bottom:100px;
+  }
+  .hash_button{
+    font-size: 0.8em;
+    height:2.4em;
+  }
+  .btn{
+    font-size: 0.5em;
+  }
+  table{
+    font-size:0.5em;
+  }
+  li{
+    font-size:0.5em;
+  }
+}
+
+@media all and (min-width:576px){
+  .container {
+    max-width: 540px;
+  }
+  .header_nav{
+    font-size: 0.9em!important;
+  }
+  #header_titleName{
+    font-size: 2em!important;
+  }
+  h1{
+    font-size:1.5em;
+  }
+  p{
+    font-size: 0.7em;
+  }
+  footer{
+    padding:30pt 0 30pt 0;
+  }
+  footer div span{
+    font-size: 13px;
+  }
+  footer div p{
+    font-size: 13px;
+  }
+  section{
+    padding : 2rem 0!important;
+  }
+  #hashrow_1{
+    left:22%;
+  }
+  #hashrow_2{
+    left:30%;
+    margin-bottom:100px;
+  }
+  #hashrow_3{
+    left:20%;
+  }
+  #hashrow_4{
+    left:25%;
+    margin-bottom:100px;
+  }
+  .hash_button{
+    font-size: 0.9em;
+    height:2.4em;
+  }
+  table{
+    font-size:0.5em;
+  }
+  li{
+    font-size:0.5em;
+  }
+}
+
+@media all and (min-width:768px) {
+  .container {
+    max-width: 720px;
+  }
+  .header_nav{
+    font-size: 1em!important;
+  }
+  #header_titleName{
+    font-size: 2.5em!important;
+  }
+  h1{
+    font-size:1.7em;
+  }
+  p{
+    font-size: 0.8em;
+  }
+  footer{
+    padding:35pt 0 35pt 0;
+  }
+  footer div span{
+    font-size: 15px;
+  }
+  footer div p{
+    font-size: 15px;
+  }
+  section{
+    padding : 3rem 0!important;
+  }
+  #hashrow_1{
+    left:27%;
+  }
+  #hashrow_2{
+    left:34%;
+    margin-bottom:100px;
+  }
+  #hashrow_3{
+    left:23%;
+  }
+  #hashrow_4{
+    left:28%;
+    margin-bottom:100px;
+  }
+  .hash_button{
+    font-size: 1em;
+    height:2.4em;
+  }
+  table{
+    font-size:0.6em;
+  }
+  li{
+    font-size:0.6em;
+  }
+
+}
+
+@media all and (min-width:992px) {
+  .container {
+    max-width: 960px;
+  }
+  .header_nav{
+    font-size: 1.2em!important;
+  }
+  #header_titleName{
+    font-size: 3em;
+  }
+  h1{
+    font-size:2em;
+  }
+  p{
+    font-size:0.9em;
+  }
+  footer{
+    padding:50pt 0 50pt 0;
+  }
+  footer div span{
+    font-size: 20px;
+  }
+  footer div p{
+    font-size: 20px;
+  }
+  .list-inline-item a{
+    width: 60px;
+  }
+  section{
+    padding : 4rem 0!important;
+  }
+  #hashrow_1{
+    left:31%;
+  }
+  #hashrow_2{
+    left:36%;
+    margin-bottom:100px;
+  }
+  #hashrow_3{
+    left:26%;
+  }
+  #hashrow_4{
+    left:30%;
+    margin-bottom:100px;
+  }
+  .hash_button{
+    font-size: 1.1em;
+    height:2.5em;
+  }
+  .btn{
+    font-size: 0.8em;
+  }
+  table{
+    font-size:0.8em;
+  }
+  li{
+    font-size:0.8em;
+  }
+
+}
+
+@media all and (min-width:1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  .header_nav{
+    font-size: 1.3em!important;
+  }
+  #header_titleName{
+    font-size: 3em;
+  }
+  h1{
+    font-size:2.5em;
+  }
+  p{
+    font-size: 1em;
+  }
+  footer{
+    padding:70pt 0 70pt 0;
+  }
+  footer div span{
+    font-size: 20px;
+  }
+  footer div p{
+    font-size: 20px;
+  }
+  section{
+    padding : 5rem 0!important;
+  }
+  #hashrow_1{
+    left:33%;
+  }
+  #hashrow_2{
+    left:37%;
+    margin-bottom:100px;
+  }
+  #hashrow_3{
+    left:28%;
+  }
+  #hashrow_4{
+    left:32%;
+    margin-bottom:100px;
+  }
+  .hash_button{
+    font-size: 1.2em;
+    height:2.5em;
+  }
+  table{
+    font-size:1em;
+  }
+  li{
+    font-size:1em;
+  }
+
+}
+
 
 body{
   text-align: center;
@@ -9,8 +347,47 @@ a{
   color:#000000;
   text-decoration: none!important;
 }
-section{
-  padding : 5rem 0!important;
+
+#hash_1{
+  position: static;
+}
+#hash_2{
+  position: static;
+  margin-left: 5px;
+}
+#hash_3{
+  position: static;
+  margin-left: 5px;
+
+}
+#hash_3_1{
+  position: static;
+  margin-left: 5px;
+}
+#hashrow_1{
+  position:relative;
+  margin-bottom: 5px;
+}
+#hash_4{
+  position: static;
+}
+#hash_5{
+  position: static;
+  margin-left: 5px;
+}
+#hash_6{
+  position: static;
+  margin-left: 5px;
+}
+#hashrow_2{
+  position: relative;
+}
+#hashrow_3{
+  position: relative;
+  margin-bottom:5px;
+}
+#hashrow_4{
+  position: relative;
 }
 .btn-primary{
   background-color: #0954A0;
@@ -18,7 +395,6 @@ section{
 
 .hr-no-margin{
   margin-top: 0pt;
-
 }
 
 .intro_image{
@@ -56,9 +432,7 @@ section{
   color: #333333;
   border:none;
   border-radius: 0.7em;
-  font-size: 1.2em;
-  height:2.5em;
-  margin: 0 0 1em 0;
+
 }
 
 th{
@@ -94,7 +468,7 @@ th{
 
 .login-frame{
   margin:100px auto 0 auto;
-  width:500px;
+  width:50%;
   background-color: #D8D8D850;
   border-radius: 30px;
 
@@ -109,6 +483,7 @@ th{
 }
 .login-footer{
   padding:30px 0 10px 0;
+  margin-bottom: 200px;
 }
 
 
@@ -181,7 +556,6 @@ th{
 footer{
   background-color: #000000;
   color: #ffffff;
-  padding:70pt 0 70pt 0;
 }
 ul{
   list-style:none;

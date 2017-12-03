@@ -317,12 +317,6 @@ router.get('/inf/restaurant', function(req, res) {
     });
 });
 
-router.get('/post', function(req, res) {
-  res.render('post_element', {
-    title: 'post',
-    user: req.user
-  });
-});
 
 router.get('/inf/write', function(req, res) {
   if (req.user == undefined) {
