@@ -14,7 +14,7 @@
       <% include ../partials/content_header_posting %>
 
 
-        <div class="container">
+        <div class="container margin-bottom">
 
 
           <div class="row">
@@ -26,55 +26,8 @@
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createImage">Upload</button>
             </div>
           </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="createImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <form action="/images" method="post" enctype="multipart/form-data">
-
-                  <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Upload a image file</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-
-                  <div class="modal-body">
-                    <div class="form-group">
-                      <input type="text" id="upload_fileName" class="file_input_textbox" readonly="readonly">
-                      <div class="file_input_div">
-                        <input type="button" value="Search files" class="file_input_button">
-                        <input type="file" id="image" name="image" class="file_input_hidden" onchange="javascript:document.getElementById('upload_fileName').value = this.value">
-
-                      </div>
-                    </div>
-
-                    <br>
-
-
-
-                    <div class="form-group">
-                      <input type="text" name="title" class="form-control" placeholder="Image Title" required="">
-                    </div>
-                    <div class="form-group">
-                      <textarea name="content" class="form-control" rows="8" cols="80" placeholder="description"></textarea>
-                    </div>
-
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-
+          <% include ../partials/modal.html %>
           <hr class="hr-no-margin">
-
 
           <div class="row">
             <% images.forEach(function(images){ %>
@@ -86,7 +39,7 @@
                       <%= images.title %>
                     </figcaption>
 
-                    <small>Upload by: <%= images.user.local.email %></small>
+                    <small>Upload by: <%= user.local.name %></small>
                   </figure>
                 </a>
               </div>
@@ -95,29 +48,9 @@
 
         </div>
 
-        <nav aria-label="Page navigation example" id="table-pagination">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item"><a class="page-link" href="#">6</a></li>
-            <li class="page-item"><a class="page-link" href="#">7</a></li>
-            <li class="page-item"><a class="page-link" href="#">8</a></li>
-            <li class="page-item"><a class="page-link" href="#">9</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
-          </ul>
-        </nav>
-
-
+        <% include ../partials/pagination.html %>
         <% include ../partials/footer %>
-          <% include ../partials/javascript %>
+        <% include ../partials/javascript %>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-@media all and (max-width:479px) {
+@media only screen and (max-width:479px) {
   .container {
     max-width: 540px;
   }
@@ -54,7 +54,7 @@
     font-size:0.5em;
   }
 }
-@media all and (min-width:480px) {
+@media only screen and (min-width:480px) {
   .container {
     max-width: 540px;
   }
@@ -111,7 +111,7 @@
   }
 }
 
-@media all and (min-width:576px){
+@media only screen and (min-width:576px){
   .container {
     max-width: 540px;
   }
@@ -165,7 +165,7 @@
   }
 }
 
-@media all and (min-width:768px) {
+@media only screen and (min-width:768px) {
   .container {
     max-width: 720px;
   }
@@ -220,7 +220,7 @@
 
 }
 
-@media all and (min-width:992px) {
+@media only screen and (min-width:992px) {
   .container {
     max-width: 960px;
   }
@@ -281,7 +281,7 @@
 
 }
 
-@media all and (min-width:1200px) {
+@media only screen and (min-width:1200px) {
   .container {
     max-width: 1140px;
   }
@@ -390,7 +390,7 @@ a{
   position: relative;
 }
 .btn-primary{
-  background-color: #0954A0;
+  background-color: #0954A0!important;
 }
 
 .hr-no-margin{
@@ -591,14 +591,11 @@ ul.social-buttons li a{
 }
 #writing_form{
   margin:auto;
-  width:50%;
 }
 
 #writing_text{
-  width:90%;
+  width:100%;
   height:30em;
-  margin:1% 5% 1% 5%;
-  padding:5px;
   overflow:auto;
   border:1px solid black;
 }
@@ -641,7 +638,7 @@ ul.social-buttons li a{
 }
 
 #text_frame{
-  width:100%;
+  width: 100%;
   height:30em;
 }
 #button_box{
@@ -740,4 +737,7 @@ ul.social-buttons li a{
 }
 .image-content{
   float:left;
+}
+.margin-bottom{
+  margin-bottom: 300pt;
 }

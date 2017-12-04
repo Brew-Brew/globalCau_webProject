@@ -10,7 +10,6 @@ var upload = multer({ dest:'./public/uploads/', limits: {fileSize: 1000000, file
 var index = require('./server/routes/index');
 var users = require('./server/routes/users');
 var images = require('./server/routes/images');
-
 // ODM With Mongoose
 var mongoose = require('mongoose');
 // Modules to store session
@@ -25,7 +24,6 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'server/views/pages'));
 app.set('view engine', 'ejs');
-
 
 // Database configuration
 var config = require('./server/config/config.js');
