@@ -85,6 +85,8 @@
   }
   footer {
     padding: 20pt 0 20pt 0;
+    display: absolute;
+    bottom: 0;
   }
   section {
     padding: 1rem 0!important;
