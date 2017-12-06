@@ -317,12 +317,6 @@ router.get('/inf/restaurant', function(req, res) {
     });
 });
 
-router.get('/post', function(req, res) {
-  res.render('post_element', {
-    title: 'post',
-    user: req.user
-  });
-});
 
 router.get('/inf/write', function(req, res) {
   if (req.user == undefined) {
@@ -418,6 +412,9 @@ router.get('/posting/:id', function(req, res) {
 });
 
 router.get('/posting/photo/:id',function(req,res){
+  if (req.user == undefined) {
+    res.redirect('/login');
+  }
   Images.find({"_id": req.params.id}).exec(function(error, images){
     images[0].views +=1;
     images[0].save();

@@ -28,7 +28,7 @@
             </div>
           </div>
 
-          <table class="table table-hover table-responsive">
+          <table class="table table-hover table-responsive margin-bottom">
             <thead>
               <tr>
                 <th width="7%">NO</th>
@@ -37,7 +37,7 @@
                 <th width="7%">Views</th>
                 <th width="7%">Votes</th>
                 <th width="15%">Date</th>
-                <th width="30%">Manage</th>
+                <th width="40%">Manage</th>
               </tr>
             </thead>
 
@@ -68,7 +68,7 @@
                   </td>
                   <td>
                     <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
-                    <a href="/posting/update/<%=posts._id%>" class="btn btn btn-info">Modify</a>
+                    <a href="/posting/update/<%=posts._id%>" class="btn btn-primary">Modify</a>
                   </td>
                 </tr>
               </tbody>

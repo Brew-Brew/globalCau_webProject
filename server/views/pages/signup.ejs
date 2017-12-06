@@ -10,111 +10,129 @@
 
 <body>
   <% include ../partials/header %>
-  <!-- Page Header -->
+    <!-- Page Header -->
     <% include ../partials/content_header %>
 
-    <form name="form" id="form" action="/signup" method="post" novalidate>
-      <div id="frame">
-        <div id="mark">
-          <br>
-          <h1>Sign Up</h1>
-          <br>
-        </div>
-        <div id="subtitle">
-          <p>Do you want to be with us?<br>
-            If so, join us now.</p>
-        </div>
+      <div class="login-box well">
+        <form name="form" id="form" action="/signup" method="post" novalidate>
+          <div class="login-frame">
+            <div class="login-title">
+              <br>
+              <h1>Sign Up</h1>
+              <br>
+            </div>
 
-        <table id="table">
-          <tr>
-            <td>
-              <div id="name_frame">
-                <label id="name_label">Name</label>
-                <table>
-                  <colgroup>
-                    <col style="width:10%;">
-                    <col style="width:90%;">
-                  </colgroup>
-                  <tr>
-                    <td><image src="/images/name.png" id="photo_name"></td>
-                    <td><input type="text" class="form-control" placeholder="Input your Name." id="name" name="name" required data-validation-required-message="Please enter your name."></td>
-                  </tr>
-                </table>
-                <p class="help-block text-danger"></p>
+
+            <div class="login-content">
+              <br>
+              <p>Do you want join? Easily Sign Up!</p>
+              <br>
+
+              <table>
+                <tr>
+                  <td>
+                    <div class="login-frame-userinfo">
+                      <label lass="login-label">Name</label>
+                      <table>
+                        <colgroup>
+                          <col style="width:10%;">
+                          <col style="width:90%;">
+                        </colgroup>
+                        <tr>
+                          <td>
+                            <image src="/images/icon/name.png" id="photo_name">
+                          </td>
+                          <td><input type="text" class="form-control" placeholder="Input your Name." id="name" name="name" required data-validation-required-message="Please enter your name."></td>
+                        </tr>
+                      </table>
+                      <p class="help-block text-danger"></p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="login-frame-userinfo">
+                      <label lass="login-label">Email Address (For ID)</label>
+                      <table>
+                        <colgroup>
+                          <col style="width:10%;">
+                          <col style="width:90%;">
+                        </colgroup>
+                        <tr>
+                          <td>
+                            <image src="/images/icon/email.png" id="photo_email">
+                          </td>
+                          <td><input type="email" class="form-control" placeholder="Input your E-mail." id="email" name="email" required data-validation-required-message="Please enter your email address."></td>
+                        </tr>
+                      </table>
+                      <p class="help-block text-danger"></p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="login-frame-userinfo">
+                      <label class="login-label">Password</label>
+                      <table>
+                        <colgroup>
+                          <col style="width:10%;">
+                          <col style="width:90%;">
+                        </colgroup>
+                        <tr>
+                          <td>
+                            <image src="/images/icon/password.png" id="photo_password">
+                          </td>
+                          <td><input type="password" class="form-control" placeholder="Input your Password." id="password" name="password" required data-validation-required-message="Please enter your password."></td>
+                        </tr>
+                      </table>
+                      <p class="help-block text-danger"></p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="login-frame-userinfo">
+                      <label lass="login-label">Password Again</label>
+                      <table>
+                        <colgroup>
+                          <col style="width:10%;">
+                          <col style="width:90%;">
+                        </colgroup>
+                        <tr>
+                          <td>
+                            <image src="/images/icon/password.png" id="photo_password">
+                          </td>
+                          <td><input type="password" class="form-control" placeholder="Input your Password Again." id="password" required data-validation-required-message="Please enter your password."></td>
+                        </tr>
+                      </table>
+                      <p class="help-block text-danger"></p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="login-footer">
+              <div class="form-group">
+                <button type="submit" class="login-btn-submit" name="submit" value="submit">Sign Up</button>
               </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div id="email_frame">
-                <label id="label">Email Address (For ID)</label>
-                <table>
-                  <colgroup>
-                    <col style="width:10%;">
-                    <col style="width:90%;">
-                  </colgroup>
-                  <tr>
-                    <td><image src="/images/email.png" id="photo_email"></td>
-                    <td><input type="email" class="form-control" placeholder="Input your E-mail." id="email" name="email" required data-validation-required-message="Please enter your email address."></td>
-                  </tr>
-                </table>
-                <p class="help-block text-danger"></p>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div id="password_frame">
-                <label id="label">Password</label>
-                <table>
-                  <colgroup>
-                    <col style="width:10%;">
-                    <col style="width:90%;">
-                  </colgroup>
-                  <tr>
-                    <td><image src="/images/password.png" id="photo_password"></td>
-                    <td><input type="password" class="form-control" placeholder="Input your Password." id="password" name="password" required data-validation-required-message="Please enter your password."></td>
-                  </tr>
-                </table>
-                <p class="help-block text-danger"></p>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div id="password_frame">
-                <label id="label">Password Again</label>
-                <table>
-                  <colgroup>
-                    <col style="width:10%;">
-                    <col style="width:90%;">
-                  </colgroup>
-                  <tr>
-                    <td><image src="/images/password.png" id="photo_password"></td>
-                    <td><input type="password" class="form-control" placeholder="Input your Password Again." id="password" required data-validation-required-message="Please enter your password."></td>
-                  </tr>
-                </table>
-                <p class="help-block text-danger"></p>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <div class="form-group">
-          <button type="submit" id="submit_button" name="submit" value="submit">Sign Up</button>
-        </div>
-        <br>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
-    <% include ../partials/footer %>
-    <% include ../partials/javascript %>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <% include ../partials/footer %>
+        <% include ../partials/javascript %>
 </body>
 
 </html>

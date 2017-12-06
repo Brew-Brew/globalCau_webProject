@@ -14,35 +14,7 @@
     <!-- Main Content -->
     <% include ../partials/content_header %>
 
-      <div class="container">
-        <div class="nav_bt_hashtag">
-          <div class="row">
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/notice"><button type="button" class="hash_button" id="hash_button1">#Notice</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/free_posting"><button type="button" class="hash_button" id="hash_button2">#Free_Posting</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/recruiting_study"><button type="button" class="hash_button" id="hash_button3">#Recruting_Study</button></a>
-            </div>
-
-
-          </div>
-
-          <div class="row">
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/meet"><button type="button" class="hash_button" id="hash_button4">#Let's_meet</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/photo"><button type="button" class="hash_button" id="hash_button5">#Photo</button></a>
-            </div>
-            <div class="col-sm-4 col-md-4 col-xs-4">
-              <a href="/posting/qna"><button type="button" class="hash_button" id="hash_button6">#QnA</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% include ../partials/content_header_posting %>
 
       <div class="container">
         <div class="content-info">
@@ -75,7 +47,7 @@
               <a href="/posting/<%=posting[0].category%>" class="btn btn-warning" >Back</a>
             </div>
             <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
-              <a href="/like/<%=posting[0]._id%>" class="btn btn-default" style="border-style:solid;border-color:black" onclick="return confirm('Do you wanna give like?')"><img id="photo_post" src="/images/like.png">Like</a>
+              <a href="/like/<%=posting[0]._id%>" class="btn btn-default" style="border-style:solid;border-color:black" onclick="return confirm('Do you wanna give like?')"><img id="photo_post" src="/images/icon/like.png">Like</a>
               <a href="/posting/update/<%=posting[0]._id%>" class="btn btn btn-info" >Modify</a>
             </div>
         </div>
@@ -94,7 +66,7 @@
                 </div>
                 <div class="col-md-2">
                   <button type="submit" class="button" id="submit" name="submit" value="submit">
-                      <img id="photo_post" src="/images/post.png">
+                      <img id="photo_post" src="/images/icon/post.png">
                       Post
                 </button>
                 </div>
