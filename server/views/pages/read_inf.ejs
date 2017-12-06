@@ -49,7 +49,11 @@
           </div>
           <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
             <a href="/like/<%=posting[0]._id%>" class="btn btn-default" style="border-style:solid;border-color:black" onclick="return confirm('Do you wanna give like?')"><img id="photo_post" src="/images/icon/like.png">Like</a>
-            <a href="/inf/update/<%=posting[0]._id%>" class="btn btn btn-info" >Modify</a>
+            <% if (user.local.name === posting[0].name) { %>
+              <a href="/inf/update/<%=posts._id%>" class="btn btn-primary">Modify</a>
+            <%} else {%>
+              <button class="btn btn-primary" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Modify</button>
+            <% } %>
           </div>
       </div>
       <div class="comment">
