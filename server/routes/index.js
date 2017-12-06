@@ -323,17 +323,22 @@ router.get('/inf/write', function(req, res) {
     res.redirect('/login');
   }
   res.render('inf_writing', {
+
     title: 'Global CAU',
-    user: req.user
+    user: req.user,
+    category : req.query.inf_category
   });
 });
+
+
 router.get('/posting/write', function(req, res) {
   if (req.user == undefined) {
     res.redirect('/login');
   }
   res.render('post_writing', {
     title: 'Global CAU',
-    user: req.user
+    user: req.user,
+    category : req.query.posting_category
   });
 });
 

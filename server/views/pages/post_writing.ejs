@@ -16,7 +16,6 @@
       <% include ../partials/content_header_posting %>
 
         <div class="container">
-          <p>Writing</p>
           <hr>
           <form action="/write" method="post" style="margin-bottom:30pt;">
             <div class="content-info">
@@ -37,14 +36,45 @@
                 <div class="col-sm-10 col-md-10 col-xs-10">
                   <select name="category" id="category">
                   <option value="">------------------</option>
-                  <option value="notice">#Notice</option>
-                  <option value="free_posting">#Free_Posting</option>
-                  <option value="recruiting_study">#Recruting_Study</option>
-                  <option value="meet">#Let's_meet</option>
-                  <option value="qna">#Qna</option>
-              </select>
+                  <% if(category == "notice"){%>
+                    <option selected value="notice">#Notice</option>
+                  <% } else{%>
+                    <option value="notice">#Notice</option>
+                  <% } %>
+
+                  <% if(category == "free_posting"){%>
+                    <option selected value="free_posting">#Free_Posting</option>
+                  <% } else{%>
+                    <option value="free_posting">#Free_Posting</option>
+                  <% } %>
+
+                  <% if(category == "recruiting_study"){%>
+                    <option selected value="recruiting_study">#Recruting_Study</option>
+                  <% } else{%>
+                    <option value="recruiting_study">#Recruting_Study</option>
+                  <% } %>
+
+                  <% if(category == "meet"){%>
+                    <option selected value="meet">#Lets_meet</option>
+                  <% } else{%>
+                    <option value="meet">#Lets_meet</option>
+                  <% } %>
+
+                  <% if(category == "meet"){%>
+                    <option selected value="meet">#Lets_meet</option>
+                  <% } else{%>
+                    <option value="meet">#Lets_meet</option>
+                  <% } %>
+
+                  <% if(category == "qna"){%>
+                    <option selected value="qna">#QnA</option>
+                  <% } else{%>
+                    <option value="qna">#QnA</option>
+                  <% } %>
+                  </select>
                 </div>
               </div>
+            </div>
 
               <div id="text_frame">
                 <textarea name="content" id="writing_text"></textarea>
@@ -59,28 +89,24 @@
                     <col style="width:10%;">
                   </colgroup>
                   <tr>
-                    <td id="fixed_left">
-                      <button class="button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-                List
-              </button>
-                    </td>
+
                     <td>
-                      <button type="button" class="button btn-warning" id="cancel">
-                <img id="photo_cancel" src="/images/icon/cancel.png">
-                Cancel
-                </button>
+                      <a href="/posting/<%= category %>">
+                        <button type="button" class="button btn-warning" id="cancel">
+                          <img id="photo_cancel" src="/images/icon/cancel.png">
+                          Cancel
+                        </button>
+                      </a>
                     </td>
                     <td>
                       <button type="submit" class="button btn-primary" id="submit" name="submit" value="submit">
-                    <img id="photo_post" src="/images/icon/post.png">
-                    Post
-              </button>
+                      <img id="photo_post" src="/images/icon/post.png">
+                      Post
+                      </button>
                     </td>
                   </tr>
                 </table>
               </div>
-            </div>
           </form>
         </div>
 
