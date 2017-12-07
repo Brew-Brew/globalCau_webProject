@@ -52,7 +52,7 @@
           </div>
           <div class="row" id="bottom">
               <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-left">
-                <a href="/posting/<%=posting[0].category%>" class="btn btn-secondary" >Back</a>
+                <a href="/posting/<%=posting[0].category%>" class="btn btn-default" style="border-style:solid;border-color:black" >Back</a>
               </div>
               <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
                 <a href="/like/<%=posting[0]._id%>" class="btn btn-default" style="border-style:solid;border-color:black" onclick="return confirm('Do you wanna give like?')"><img id="photo_post" src="/images/icon/like.png">Like</a>
@@ -98,7 +98,7 @@
                       <div class="col-md-8" style="text-align:left;">
                         <p><%= comments.content %></p>
                       </div>
-                      <div class="col-md-1" style="text-align:right;font-size:0.4em;">
+                      <div class="col-md-1" style="text-align:right;font-size:0.7em;">
                         <p><%= comments.date %></p>
                       </div>
                       <div class="col-md-1">

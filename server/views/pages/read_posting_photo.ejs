@@ -59,14 +59,14 @@
 
           <div class="row" id="bottom">
               <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-left">
-                <a href="/posting/photo" class="btn btn-warning" >Back</a>
+                <a href="/posting/photo" class="btn btn-default" style="border-style:solid;border-color:black" >Back</a>
               </div>
               <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
                 <a href="/like/<%=images[0]._id%>" class="btn btn-default" style="border-style:solid;border-color:black" onclick="return confirm('Do you wanna give like?')"><img id="photo_post" src="/images/icon/like.png">Like</a>
                 <% if (user.local.name === images[0].name) { %>
-                  <a href="/delete/photo/<%=images[0]._id%>" class="btn btn-danger">Delete</a>
+                  <a href="/delete/photo/<%=images[0]._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
                 <%} else {%>
-                  <button class="btn btn-primary" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Modify</button>
+                  <button class="btn btn-danger" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Delete</button>
                 <% } %>
               </div>
           </div>
@@ -114,7 +114,10 @@
                           <%= comments.content %>
                         </p>
                       </div>
-                      <div class="col-md-2">
+                      <div class="col-md-1" style="text-align:right;font-size:0.7em;">
+                        <p><%= comments.date %></p>
+                      </div>
+                      <div class="col-md-1">
                         <a href="/comment/delete/<%=comments._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
                       </div>
                     </div>
