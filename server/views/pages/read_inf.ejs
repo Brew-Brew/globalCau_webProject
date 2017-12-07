@@ -10,107 +10,111 @@
 
 <body>
   <% include ../partials/header %>
-  <!-- Main Content -->
+    <!-- Main Content -->
     <% include ../partials/content_header %>
-    <% include ../partials/content_header_inf %>
+      <% include ../partials/content_header_inf %>
 
-
-
-
-    <div class="container">
-      <div class="content-info">
-        <div class="row">
-          <div class="col-sm-8 col-md-8 col-xs-8">
-              <h4><strong>Title:</strong> <%= posting[0].title %><h4>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <h4><strong>Date:</strong> <%= posting[0].date %><h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-8 col-md-8 col-xs-8">
-              <h4><strong>Category:</strong> <%= posting[0].category%><h4>
-          </div>
-          <div class="col-sm-4 col-md-4 col-xs-4">
-            <h4><strong>Writer:</strong> <%= posting[0].name%><h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="content-main">
         <div class="container">
-            <%= posting[0].content %>
-        </div>
-
-      </div>
-      <div class="row" id="bottom">
-          <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-left">
-            <a href="/inf/<%=posting[0].category%>" class="btn btn-warning" >Back</a>
-          </div>
-          <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
-            <a href="/like/<%=posting[0]._id%>" class="btn btn-default" style="border-style:solid;border-color:black" onclick="return confirm('Do you wanna give like?')"><img id="photo_post" src="/images/icon/like.png">Like</a>
-            <% if (user.local.name === posting[0].name) { %>
-              <a href="/inf/update/<%=posts._id%>" class="btn btn-primary">Modify</a>
-            <%} else {%>
-              <button class="btn btn-primary" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Modify</button>
-            <% } %>
-          </div>
-      </div>
-      <div class="comment">
-        <form action="/comment/write" method="post">
-          <div class="comment-write">
+          <div class="content-info">
             <div class="row">
-              <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
-              <input type="hidden" id="hidden" name="postid" value="<%= posting[0]._id %>">
-              <div class="col-md-4">
-                <label for="titel_name">Title</label>
-                <input type="text" name="title" id="title_name" /><br>
+              <div class="col-sm-8 col-md-8 col-xs-8">
+                <h4><strong>Title: </strong> <%= posting[0].title %><h4>
               </div>
-              <div class="col-md-6">
-                <textarea name="content" style="width:100%"></textarea>
-              </div>
-              <div class="col-md-2">
-                <button type="submit" class="button" id="submit" name="submit" value="submit">
-                    <img id="photo_post" src="/images/icon/post.png">
-                    Post
-              </button>
-              </div>
+              <div class="col-sm-4 col-md-4 col-xs-4">
+                <h4><strong>Date: </strong> <%= posting[0].date %><h4>
               </div>
             </div>
-
-
-        </form>
-        <div class="comment-content" >
-          <% comment.forEach(function(comments){ %>
-          <% if(comments == undefined) {%>
-            <h4>댓글이 없습니다.</h4>
-          <%} else {%>
-          <div class="row" style="margin-top: 10px">
-            <div class="col-md-2">
-              Writer: <%= comments.name %>
+            <div class="row">
+              <div class="col-sm-8 col-md-8 col-xs-8">
+                  <h4><strong>Category: </strong> <%= posting[0].category%><h4>
+              </div>
+              <div class="col-sm-4 col-md-4 col-xs-4">
+                <h4><strong>Views: </strong> <%= posting[0].views%><h4>
+              </div>
             </div>
-            <div class="col-md-2">
-             Title: <%= comments.title %>
-            </div>
-            <div class="col-md-6">
-              <%= comments.content %>
-            </div>
-            <div class="col-md-2">
-              <a href="/comment/delete/<%=comments._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
+            <div class="row">
+              <div class="col-sm-8 col-md-8 col-xs-8">
+                  <h4><strong>Writer: </strong> <%= posting[0].name%><h4>
+              </div>
+              <div class="col-sm-4 col-md-4 col-xs-4">
+                <h4><strong>Likes: </strong> <%= posting[0].likes%><h4>
+              </div>
             </div>
           </div>
-          <% } %>
-          <% }); %>
+
+          <div class="content-main">
+            <div class="container">
+            <%= posting[0].content %>
+            </div>
+
+          </div>
+          <div class="row" id="bottom">
+              <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-left">
+                <a href="/inf/<%=posting[0].category%>" class="btn btn-warning" >Back</a>
+              </div>
+              <div class="col-sm-6 col-md-6 col-xs-6" id="bottom-right">
+                <a href="/like/<%=posting[0]._id%>" class="btn btn-default" style="border-style:solid;border-color:black" onclick="return confirm('Do you wanna give like?')"><img id="photo_post" src="/images/icon/like.png">Like</a>
+                <% if (user.local.name === posting[0].name) { %>
+                  <a href="/inf/update/<%=posting[0]._id%>" class="btn btn-primary">Modify</a>
+                <%} else {%>
+                  <button class="btn btn-primary" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Modify</button>
+                <% } %>
+              </div>
+          </div>
+
+
+
+          <div class="comment">
+            <form action="/comment/write" method="post">
+              <div class="comment-write">
+                <div class="row">
+                  <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
+                  <input type="hidden" id="hidden" name="postid" value="<%= posting[0]._id %>">
+                  <div class="col-md-2">
+                    <p><%= user.local.name %></p>
+                  </div>
+                  <div class="col-md-8">
+                    <textarea name="content" style="width:100%"></textarea>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="submit" class="button" id="submit" name="submit" value="submit">
+                        <img id="photo_post" src="/images/icon/post.png">
+                        Post
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <hr>
+            <div class="comment-content" >
+              <% comment.forEach(function(comments){ %>
+                <% if(comments == undefined) {%>
+                  <h4>댓글이 없습니다.</h4>
+                <%} else {%>
+                  <div class="row" style="margin-top: 10px">
+                    <div class="col-md-2">
+                      <p><%= comments.name %></p>
+                    </div>
+                    <div class="col-md-8" style="text-align:left;">
+                      <p><%= comments.content %></p>
+                    </div>
+                    <div class="col-md-2">
+                      <a href="/comment/delete/<%=comments._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
+                    </div>
+                  </div>
+                <% } %>
+                <hr>
+              <% }); %>
+            </div>
+          </div>
         </div>
-      </div>
-     </div>
-    </div>
+        <br>
 
-    <!-- Footer -->
+          <!-- Footer -->
 
 
-    <% include ../partials/footer %>
-      <% include ../partials/javascript %>
+          <% include ../partials/footer %>
+            <% include ../partials/javascript %>
 </body>
 
 </html>

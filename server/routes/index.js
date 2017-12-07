@@ -135,6 +135,9 @@ router.get('/posting/photo', function(req, res) {
               message: error
           });
       }
+      if (req.user == undefined) {
+        res.redirect('/login');
+      }
       // REnder galley
       res.render('content_posting_photo', {
           title: 'Global CAU',
@@ -477,6 +480,12 @@ router.get('/delete/:id', function(req, res){
     });
 });
 
+router.get('/delete/photo/:id',function(req,res){
+    Images.remove({ _id : req.params.id }, function(err){
+        res.redirect('/posting/photo');
+    });
+});
+
 router.get('/comment/delete/:id', function(req, res){
     console.log(req.params.id);
     Comment.remove({ _id : req.params.id }, function(err){
@@ -489,8 +498,16 @@ router.get('/like/:id', function(req, res) {
     postings[0].likes +=1;
     postings[0].save();
     res.redirect('back');
-    });
   });
+});
+router.get('/like/:id', function(req, res) {
+  Images.find({"_id": req.params.id}).sort({date:-1}).exec(function(error, postings) {
+    images[0].likes +=1;
+    images[0].save();
+    res.redirect('back');
+  });
+});
+
 
 
 router.get('/inf/update/:id', function(req, res){

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -38,25 +37,24 @@
                 <th width="7%">NO</th>
                 <th width="24%">Title</th>
                 <th width="20%">Writer</th>
+                <th width="7%">Views</th>
                 <th width="7%">Likes</th>
-                <th width="7%">Votes</th>
                 <th width="15%">Date</th>
                 <th width="40%">Manage</th>
               </tr>
             </thead>
 
             <!--데이터 -->
+            <tbody>
+              <% posting.forEach(function(posts){ %>
 
-            <% posting.forEach(function(posts){ %>
-              <tbody>
-                <tr>
+
+                <tr data-href="/posting/<%= posts._id %>">
                   <td>
                     <%= num++ %>
                   </td>
                   <td>
-                    <a href="/posting/<%= posts._id %>">
-                      <%= posts.title %>
-                    </a>
+                    <%= posts.title %>
                   </td>
                   <td>
                     <%= posts.name %>
@@ -73,22 +71,23 @@
                   <td>
                     <% if (user) {%>
                       <% if (user.local.name === posts.name) { %>
-                      <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
-                      <a href="/posting/update/<%=posts._id%>" class="btn btn-primary">Modify</a>
-                      <%} else {%>
-                      <button class="btn btn-danger" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Delete</button>
-                      <button class="btn btn-primary" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Modify</button>
-                      <% } %>
-                    <%} else {%>
-                      <a href="/login" class="btn btn-danger" >Delete</a>
-                      <a href="/login" class="btn btn-primary">Modify</a>
-                    <% } %>
+                        <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
+                        <a href="/posting/update/<%=posts._id%>" class="btn btn-primary">Modify</a>
+                        <%} else {%>
+                          <button class="btn btn-danger" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Delete</button>
+                          <button class="btn btn-primary" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Modify</button>
+                          <% } %>
+                            <%} else {%>
+                              <a href="/login" class="btn btn-danger">Delete</a>
+                              <a href="/login" class="btn btn-primary">Modify</a>
+                              <% } %>
                   </td>
                 </tr>
-              </tbody>
 
-              <% }); %>
 
+
+                <% }); %>
+            </tbody>
           </table>
 
           <nav aria-label="Page navigation example" id="table-pagination">
@@ -115,7 +114,13 @@
 
 
         <% include ../partials/footer %>
+
           <% include ../partials/javascript %>
+          <script type="text/javascript">
+            $('tr[data-href]').on("click", function() {
+              document.location = $(this).data('href');
+            });
+          </script>
 
 
 </body>
