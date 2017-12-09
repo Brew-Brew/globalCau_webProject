@@ -17,62 +17,107 @@
     <% include ../partials/content_header_inf %>
 
 
-    <form id="writing_form" action="/update" method="post">
-      <div class="content-info">
-        <input type="hidden" name="id" value="<%= posting[0]._id%>">
-        <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
-        <input type="hidden" name="menu" value="inf">
-        <label for="titel_name">Title</label>
-        <input type="text" name="title" id="title_name" value="<%= posting[0].title%>"/><br>
-        <label for="category">Category</label>
-        <select name="category" id="category">
-          <option value="">------------------</option>
-          <option value="lecture">#Lecture</option>
-          <option value="restaurant">#Restaurant</option>
-          <option value="housing">#Housing</option>
-          <option value="advertise">#Advertise</option>
-          <option value="part_time_job">#Part_Time_Job</option>
-          <option value="lost_found">#Lost_Found</option>
-          <option value="others">#Others</option>
-        </select>
-      </div>
-      <div id="text_frame">
-        <textarea name="content" id="writing_text" ><%= posting[0].content%></textarea>
-      </div>
+    <div class="container">
+      <hr>
+      <form id="writing_form" action="/update" method="post">
+        <div class="content-info">
+          <input type="hidden" name="id" value="<%= posting[0]._id%>">
+          <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
+          <input type="hidden" name="menu" value="inf">
+          <div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-2">
+              <label for="titel_name">Title</label>
+            </div>
+            <div class="col-sm-10 col-md-10 col-xs-10">
+              <input type="text" name="title" id="title_name" value="<%= posting[0].title%>"/><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-2">
+              <label for="category">Category</label>
+            </div>
+            <div class="col-sm-10 col-md-10 col-xs-10">
+              <select name="category" id="category">
+                <option value="">------------------</option>
+                <% if(posting[0].category == "lecture"){%>
+                  <option selected value=lecture>#Lecture</option>
+                <% } else{%>
+                  <option value="lecture">#Lecture</option>
+                <% } %>
 
-      <br>
-      <div class="top_boundary" id="button_box">
-        <table>
-          <colgroup>
-            <col style="width:80%;">
-            <col style="width:10%;">
-            <col style="width:10%;">
-          </colgroup>
-          <tr>
-            <td id="fixed_left">
-              <button class="button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa fa-bars"></i>
-              List
-            </button>
-            </td>
-            <td>
-              <button type="button" class="button" id="cancel">
-              <img id="photo_cancel" src="/images/icon/cancel.png">
-              Cancel
-            </button>
-            </td>
-            <td>
-              <button type="submit" class="button" id="submit" name="submit" value="submit">
+                <% if(posting[0].category == "restaurant"){%>
+                  <option selected value="restaurant">#Restaurant</option>
+                <% } else{%>
+                  <option value="restaurant">#Restaurant</option>
+                <% } %>
+
+                <% if(posting[0].category == "housing"){%>
+                  <option selected value="housing">#Housing</option>
+                <% } else{%>
+                  <option value="housing">#Housing</option>
+                <% } %>
+
+                <% if(posting[0].category == "advertise"){%>
+                  <option selected value="advertise">#Advertise</option>
+                <% } else{%>
+                  <option value="advertise">#Advertise</option>
+                <% } %>
+
+                <% if(posting[0].category == "part_Time_Job"){%>
+                  <option selected value="part_time_job">#Part_Time_Job</option>
+                <% } else{%>
+                  <option value="part_time_job">#Part_Time_Job</option>
+                <% } %>
+
+                <% if(posting[0].category == "lost_Found"){%>
+                  <option selected value="lost_found">#Lost_Found</option>
+                <% } else{%>
+                  <option value="lost_found">#Lost_Found</option>
+                <% } %>
+
+                <% if(posting[0].category == "others"){%>
+                  <option selected value="others">#Others</option>
+                <% } else{%>
+                  <option value="others">#Others</option>
+                <% } %>
+
+              </select>
+            </div>
+          </div>
+
+        </div>
+        <div id="text_frame">
+          <textarea name="content" id="writing_text" ><%= posting[0].content%></textarea>
+        </div>
+
+        <br>
+        <div class="top_boundary" id="button_box">
+          <table>
+            <colgroup>
+              <col style="width:90%;">
+              <col style="width:10%;">
+            </colgroup>
+            <tr>
+              <td>
+                <a href="/inf/<%= posting[0].category %>">
+                  <button type="button" class="button btn-warning" id="cancel">
+                    <img id="photo_cancel" src="/images/icon/cancel.png">
+                    Cancel
+                  </button>
+                  </a>
+              </td>
+              <td>
+                <button type="submit" class="button btn-primary" id="submit" name="submit" value="submit">
                   <img id="photo_post" src="/images/icon/post.png">
                   Post
-            </button>
-            </td>
-          </tr>
-        </table>
-
-      </div>
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </form>
+  </div>
 
 
     <% include ../partials/footer %>

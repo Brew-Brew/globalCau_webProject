@@ -377,6 +377,7 @@ router.post('/comment/write', function(req, res) {
 router.post('/update', function(req, res) {
   console.log(req.body);
   Posting.find({"_id": req.body.id}).sort({date:-1}).exec(function(error, posting) {
+    posting[0].category = req.body.category;
     posting[0].title = req.body.title;
     posting[0].content = req.body.content;
     posting[0].save(function(err) {
