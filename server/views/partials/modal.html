@@ -4,6 +4,7 @@
     <div class="modal-content">
       <form action="/images" method="post" enctype="multipart/form-data">
 
+
         <div class="modal-header">
           <h4 class="modal-title" id="myModalLabel">Upload a image file</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -22,7 +23,7 @@
           </div>
 
           <br>
-
+          <input type="hidden" id="hidden" name="name" value="<%= user.local.name %>">
           <div class="form-group">
             <input type="text" name="title" class="form-control" placeholder="Image Title" required="">
           </div>

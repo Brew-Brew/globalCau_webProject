@@ -49,17 +49,15 @@
             </thead>
 
             <!--데이터 -->
+            <tbody>
+              <% posting.forEach(function(posts){ %>
 
-            <% posting.forEach(function(posts){ %>
-              <tbody>
-                <tr>
+                <tr data-href="/inf/<%= posts._id %>">
                   <td>
                     <%= num++ %>
                   </td>
                   <td>
-                    <a href="/inf/<%= posts._id %>">
-                      <%= posts.title %>
-                    </a>
+                    <%= posts.title %>
                   </td>
                   <td>
                     <%= posts.name %>
@@ -71,16 +69,26 @@
                     <%= posts.likes %>
                   </td>
                   <td>
-                    <%= posts.date%>
+                    <%= posts.date %>
                   </td>
                   <td>
-                    <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
-                    <a href="/inf/update/<%=posts._id%>" class="btn btn btn-info">Modify</a>
+                    <% if (user) {%>
+                      <% if (user.local.name === posts.name) { %>
+                        <a href="/delete/<%=posts._id%>" class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">Delete</a>
+                        <a href="/inf/update/<%=posts._id%>" class="btn btn-primary">Modify</a>
+                        <%} else {%>
+                          <button class="btn btn-danger" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Delete</button>
+                          <button class="btn btn-primary" onclick="swal('Oops!', 'You are not a writer of this posting!', 'error')">Modify</button>
+                          <% } %>
+                            <%} else {%>
+                              <a href="/login" class="btn btn-danger">Delete</a>
+                              <a href="/login" class="btn btn-primary">Modify</a>
+                              <% } %>
                   </td>
                 </tr>
-              </tbody>
-              <% }); %>
 
+                <% }); %>
+            </tbody>
           </table>
 
 
@@ -110,6 +118,11 @@
         <!-- Footer -->
         <% include ../partials/footer %>
           <% include ../partials/javascript %>
+          <script type="text/javascript">
+            $('tr[data-href]').on("click", function() {
+              document.location = $(this).data('href');
+            });
+          </script>
 </body>
 
 </html>

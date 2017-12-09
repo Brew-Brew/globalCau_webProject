@@ -7,7 +7,6 @@ var today = new Date();
 var commentSchema = mongoose.Schema({
     // Using local for Local Strategy Passport
         postId: String,
-        title: String,
         content: String,
         date: {type: String, default: today.toDateString()},
         name: String

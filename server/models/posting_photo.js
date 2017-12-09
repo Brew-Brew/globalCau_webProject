@@ -24,9 +24,13 @@ var postingPhotoSchema = mongoose.Schema({
     type: Number,
     default: 0
   },
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User'
+  likes:{
+    type: Number,
+    default: 0
+  },
+  name:{
+    type: String,
+    default:'default'
   }
 });
 
